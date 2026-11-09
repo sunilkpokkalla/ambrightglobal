@@ -1,0 +1,22 @@
+[
+  {
+    "supplierId": "SUP-IN480085",
+    "submittedAt": "2026-11-09T09:44:40.085Z",
+    "unitName": "Gujarat Polymer Granules Ltd",
+    "gstin": "24AABCG1234F1Z6",
+    "iec": null,
+    "category": "Polymers & Chemicals",
+    "email": "sales@gujaratpolymers.in",
+    "status": "Preliminary Audit Scheduled"
+  },
+  {
+    "supplierId": "SUP-IN046115",
+    "submittedAt": "2026-11-09T09:37:26.116Z",
+    "unitName": "Rajkot Foundry Works Ltd",
+    "gstin": "24AAACR1234F1Z5",
+    "iec": null,
+    "category": "Engineering & Castings",
+    "email": "export@rajkotfoundry.in",
+    "status": "Preliminary Audit Scheduled"
+  }
+]

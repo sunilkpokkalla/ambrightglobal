@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proforma Invoice — AmBright Global | Ambright Technologies India Pvt Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 15mm 15mm 20mm 15mm; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: #1e293b; background: #f1f5f9; font-size: 13px; line-height: 1.45; }
+    .page-wrap { max-width: 860px; margin: 30px auto; background: #fff; padding: 48px; border: 1px solid #cbd5e1; box-shadow: 0 10px 25px -5px rgba(0,0,0,.08); border-radius: 4px; }
+    .print-bar { max-width: 860px; margin: 20px auto 0; display: flex; justify-content: space-between; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; border: 1px solid #cbd5e1; background: #fff; color: #0f172a; }
+    .btn-gold { background: #d97706; color: #fff; border-color: #b45309; }
+    .btn-gold:hover { background: #b45309; }
+    .header-row { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 24px; border-bottom: 2px solid #0b192c; }
+    .company-name { font-family: "Plus Jakarta Sans", sans-serif; font-size: 22px; font-weight: 800; color: #0b192c; }
+    .company-sub { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #d97706; font-weight: 700; margin-top: 2px; }
+    .company-meta { font-size: 11.5px; color: #475569; margin-top: 6px; line-height: 1.5; }
+    .doc-title { text-align: right; }
+    .doc-title h1 { font-family: "Plus Jakarta Sans", sans-serif; font-size: 22px; font-weight: 800; color: #0b192c; margin: 0; }
+    .doc-ref { font-family: "Space Mono", monospace; font-size: 14px; font-weight: 700; color: #4338ca; margin-top: 4px; }
+    .doc-date { font-size: 12px; color: #64748b; margin-top: 4px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+    .box-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #94a3b8; margin-bottom: 6px; }
+    .info-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 16px; font-size: 12.5px; }
+    .info-box strong { color: #0b192c; }
+    .logistics-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; padding: 12px 16px; background: #f1f5f9; border-radius: 6px; font-size: 12px; }
+    .logistics-bar .k { font-size: 10.5px; text-transform: uppercase; color: #64748b; font-weight: 600; }
+    .logistics-bar .v { font-weight: 700; color: #0b192c; margin-top: 2px; }
+    table.pi-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    table.pi-table th { background: #0b192c; color: #fff; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding: 10px 12px; text-align: left; }
+    table.pi-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; vertical-align: top; font-size: 12.5px; }
+    .mono { font-family: "Space Mono", monospace; font-size: 11.5px; }
+    .totals-area { display: flex; justify-content: flex-end; margin-top: 16px; }
+    .totals-box { width: 340px; font-size: 13px; }
+    .totals-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #e2e8f0; }
+    .totals-row.grand { font-family: "Plus Jakarta Sans", sans-serif; font-size: 16px; font-weight: 800; color: #0b192c; border-bottom: 2px solid #0b192c; padding-top: 10px; }
+    .terms-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+    .banking-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 14px; font-size: 11.5px; }
+    .signature-area { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end; text-align: right; }
+    .sig-seal { width: 140px; height: 70px; border: 2px dashed #94a3b8; display: grid; place-items: center; border-radius: 6px; color: #64748b; font-size: 11px; margin-bottom: 8px; }
+    .footer-note { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 10.5px; color: #64748b; text-align: center; }
+
+    @media print {
+      body { background: #fff; }
+      .print-bar { display: none !important; }
+      .page-wrap { margin: 0; padding: 0; border: none; box-shadow: none; width: 100%; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-bar">
+  <a href="/admin" class="btn"><span class="material-symbols-outlined" style="font-size:16px">arrow_back</span>Back to Dashboard</a>
+  <button class="btn btn-gold" onclick="window.print()"><span class="material-symbols-outlined" style="font-size:16px">print</span>Print / Save PDF</button>
+</div>
+
+<div class="page-wrap">
+  <!-- Header -->
+  <div class="header-row">
+    <div>
+      <div class="company-name">AmBright Global</div>
+      <div class="company-sub">A Division of Ambright Technologies India Private Limited</div>
+      <div class="company-meta">
+        Regd. Office: Sector 11, CBD Belapur, Navi Mumbai, MH 400614, India<br>
+        <strong>DGFT IEC:</strong> 0512849182 &nbsp;|&nbsp; <strong>FIEO Member:</strong> 7731 &nbsp;|&nbsp; <strong>GSTIN:</strong> 27AAQCA4471K1Z9<br>
+        <strong>Email:</strong> trade@ambrightglobal.com &nbsp;|&nbsp; <strong>Hotline:</strong> +91 1800-AMBRIGHT
+      </div>
+    </div>
+    <div class="doc-title">
+      <h1>PROFORMA INVOICE</h1>
+      <div class="doc-ref" id="piRef">PI-2611-001</div>
+      <div class="doc-date" id="piDate">Date: 09 Nov 2026</div>
+    </div>
+  </div>
+
+  <!-- Parties -->
+  <div class="grid-2">
+    <div>
+      <div class="box-title">Buyer / Consignee</div>
+      <div class="info-box">
+        <strong id="buyerName">BioHerb Handels GmbH</strong><br>
+        Attn: <span id="buyerAttn">Markus Krüger (Head of Global Sourcing)</span><br>
+        <span id="buyerEmail">m.krueger@bioherb.de</span><br>
+        Destination: <span id="buyerCountry">Germany (DE)</span>
+      </div>
+    </div>
+    <div>
+      <div class="box-title">Merchant Exporter &amp; Shipper</div>
+      <div class="info-box">
+        <strong>Ambright Technologies India Private Limited</strong><br>
+        Customs Broker: In-House CHA Lic. INNSA1/2019<br>
+        Quality Assurance: SGS / Intertek Accredited PSI<br>
+        Jurisdiction: Mumbai, Republic of India
+      </div>
+    </div>
+  </div>
+
+  <!-- Logistics Summary -->
+  <div class="logistics-bar">
+    <div><div class="k">Port of Loading</div><div class="v" id="piPol">Nhava Sheva (INNSA)</div></div>
+    <div><div class="k">Port of Discharge</div><div class="v" id="piPod">Rotterdam (NLRTM)</div></div>
+    <div><div class="k">Incoterms® 2020</div><div class="v" id="piInco">CIF Destination</div></div>
+    <div><div class="k">Payment Terms</div><div class="v" id="piPayment">Irrevocable LC at Sight</div></div>
+  </div>
+
+  <!-- Commercial Item Table -->
+  <table class="pi-table">
+    <thead>
+      <tr>
+        <th style="width:45px">Item</th>
+        <th>Commodity &amp; Technical Specification</th>
+        <th>HS Code</th>
+        <th style="text-align:right">Quantity</th>
+        <th style="text-align:right">Unit Price (USD)</th>
+        <th style="text-align:right">Total (USD)</th>
+      </tr>
+    </thead>
+    <tbody id="piItemsBody">
+      <tr>
+        <td>1</td>
+        <td>
+          <b id="itemProduct">Salem Curcumin Turmeric Fingers (Grade A)</b><br>
+          <small style="color:#64748b" id="itemSpecs">Curcumin ≥ 3.5%, Moisture ≤ 10%, ETO-free, SGS pre-shipment tested</small><br>
+          <small style="color:#64748b" id="itemPack">Packing: 25 kg Multi-ply paper bags on shrink-wrapped pallets</small>
+        </td>
+        <td class="mono">0910.30.20</td>
+        <td style="text-align:right" id="itemQty">54 MT</td>
+        <td style="text-align:right" id="itemRate">$1,280.00</td>
+        <td style="text-align:right;font-weight:700" id="itemSubtotal">$69,120.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Totals -->
+  <div class="totals-area">
+    <div class="totals-box">
+      <div class="totals-row"><span>FOB Cargo Value</span><span id="fobVal">$64,800.00</span></div>
+      <div class="totals-row"><span>Ocean Freight (2 × 40' HC)</span><span id="freightVal">$4,120.00</span></div>
+      <div class="totals-row"><span>Marine Cargo Insurance (ICC-A 110%)</span><span id="insVal">$200.00</span></div>
+      <div class="totals-row grand"><span>Total CIF Value (USD)</span><span id="grandTotal">$69,120.00</span></div>
+    </div>
+  </div>
+
+  <!-- Banking & Signature -->
+  <div class="terms-grid">
+    <div class="banking-box">
+      <div style="font-weight:700;color:#0b192c;margin-bottom:6px">Authorized Foreign Exchange Settlement Bank:</div>
+      <strong>Beneficiary:</strong> Ambright Technologies India Private Limited<br>
+      <strong>Bank Name:</strong> State Bank of India (AD Category-I / Overseas Branch)<br>
+      <strong>SWIFT / BIC Code:</strong> SBININBB441<br>
+      <strong>Account / IBAN:</strong> 00000038491829401<br>
+      <strong>Remittance Purpose:</strong> Merchant Export Trade Receipts (FEMA Compliant)
+    </div>
+    <div class="signature-area">
+      <div class="sig-seal">
+        <span>[ DIGITALLY SIGNED ]<br><strong>AMBRIGHT TECH INDIA</strong><br>Authorized Signatory</span>
+      </div>
+      <div style="font-weight:700;color:#0b192c">Director / Head of International Trade</div>
+      <div style="font-size:11px;color:#64748b">AmBright Global Trade Operations</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    This Proforma Invoice constitutes an official commercial offer under ICC Incoterms® 2020 rules. Subject to pre-shipment inspection verification by SGS / Intertek. Valid for 7 calendar days from issuance date.
+  </div>
+</div>
+
+<script>
+async function loadProforma() {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref");
+  if (!ref) return;
+
+  document.getElementById("piRef").textContent = ref;
+  try {
+    const res = await fetch("/api/rfq/" + encodeURIComponent(ref));
+    if (!res.ok) return;
+    const rfq = await res.json();
+    if (!rfq) return;
+
+    document.getElementById("buyerName").textContent = rfq.corporate.companyLegalEntity;
+    document.getElementById("buyerAttn").textContent = `${rfq.corporate.procurementOfficer} (${rfq.corporate.designation || "Procurement"})`;
+    document.getElementById("buyerEmail").textContent = rfq.corporate.corporateEmail;
+    document.getElementById("buyerCountry").textContent = rfq.corporate.countryOfIncorporation || "Overseas";
+
+    document.getElementById("itemProduct").textContent = rfq.orderSpecs.productCategory;
+    document.getElementById("itemSpecs").textContent = rfq.orderSpecs.specificGrade || "Certified Export Grade · Pre-shipment inspected";
+    document.getElementById("itemPack").textContent = "Packing: " + (rfq.orderSpecs.packaging || "Export Standard");
+    document.getElementById("itemQty").textContent = rfq.orderSpecs.quantity;
+    document.getElementById("piPod").textContent = rfq.orderSpecs.portOfDischarge;
+    document.getElementById("piInco").textContent = rfq.tradeFinance.incoterm + " Destination";
+    document.getElementById("piPayment").textContent = rfq.tradeFinance.paymentMethod;
+  } catch (e) {
+    // Keep specimen defaults
+  }
+}
+loadProforma();
+</script>
+
+</body>
+</html>

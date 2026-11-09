@@ -1,0 +1,60 @@
+[
+  {
+    "rfqReference": "RFQ-2611-8868",
+    "receivedAt": "2026-11-09T09:44:40.084Z",
+    "corporate": {
+      "companyLegalEntity": "Apex Global Logistics",
+      "procurementOfficer": "David Chen",
+      "designation": "Procurement Officer",
+      "corporateEmail": "d.chen@apexgl.com",
+      "phone": "+1 713 555 0199",
+      "countryOfIncorporation": "Not specified",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "Minerals & Processed Ores",
+      "specificGrade": "Standard Export Grade",
+      "quantity": "120 MT",
+      "packaging": "FIBC Jumbo Bags (1 MT)",
+      "portOfDischarge": "Houston (USHOU)",
+      "orderFrequency": "Spot / One-time",
+      "notes": ""
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "Trade Escrow",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-09T13:44:40.084Z"
+  },
+  {
+    "rfqReference": "RFQ-2611-5479",
+    "receivedAt": "2026-11-09T09:37:26.113Z",
+    "corporate": {
+      "companyLegalEntity": "BioHerb GmbH",
+      "procurementOfficer": "Markus Krüger",
+      "designation": "Procurement Officer",
+      "corporateEmail": "m.krueger@bioherb.de",
+      "phone": "Not provided",
+      "countryOfIncorporation": "Not specified",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "Agri-Commodities & Organic Spices",
+      "specificGrade": "Standard Export Grade",
+      "quantity": "54 MT",
+      "packaging": "Multi-ply Paper Bags (25/50 kg)",
+      "portOfDischarge": "Hamburg (DEHAM)",
+      "orderFrequency": "Spot / One-time",
+      "notes": ""
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "Irrevocable LC at Sight",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-09T13:37:26.113Z"
+  }
+]

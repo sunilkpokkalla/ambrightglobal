@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Desk Operations Dashboard — AmBright Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block" rel="stylesheet">
+  <style>
+    :root {
+      --navy-950: #060E1A; --navy-900: #0B192C; --navy-800: #12243D;
+      --indigo-700: #4338CA; --indigo-50: #EEF2FF;
+      --gold-600: #D97706; --gold-500: #F59E0B; --gold-50: #FFFBEB;
+      --slate-50: #F8FAFC; --slate-100: #F1F5F9; --slate-200: #E2E8F0;
+      --slate-400: #94A3B8; --slate-500: #64748B; --slate-700: #334155; --slate-900: #0F172A;
+      --emerald-600: #059669; --emerald-50: #ECFDF5;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; background: var(--slate-50); color: var(--slate-700); font-size: 14px; line-height: 1.5; }
+    header { background: var(--navy-900); color: #fff; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-title { font-family: "Plus Jakarta Sans", sans-serif; font-size: 18px; font-weight: 800; color: #fff; }
+    .brand-title span { color: var(--gold-500); }
+    .brand-sub { font-size: 10px; color: var(--slate-400); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links a { color: var(--slate-400); text-decoration: none; margin-left: 20px; font-size: 13px; font-weight: 500; }
+    .nav-links a:hover { color: #fff; }
+    .container { max-width: 1280px; margin: 32px auto; padding: 0 24px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 28px; }
+    .stat-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .stat-card .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--slate-400); }
+    .stat-card .val { font-family: "Plus Jakarta Sans", sans-serif; font-size: 28px; font-weight: 800; color: var(--navy-900); margin-top: 4px; }
+    .stat-card .note { font-size: 12px; color: var(--emerald-600); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
+    .panel { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.04); margin-bottom: 32px; }
+    .panel-head { padding: 18px 24px; border-bottom: 1px solid var(--slate-200); display: flex; justify-content: space-between; align-items: center; background: #fff; }
+    .panel-head h2 { font-family: "Plus Jakarta Sans", sans-serif; font-size: 17px; font-weight: 800; color: var(--navy-900); margin: 0; display: flex; align-items: center; gap: 10px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th { background: var(--slate-50); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-500); font-weight: 700; padding: 12px 18px; border-bottom: 1px solid var(--slate-200); }
+    td { padding: 14px 18px; border-bottom: 1px solid var(--slate-100); font-size: 13px; vertical-align: middle; }
+    tbody tr:hover { background: var(--slate-50); }
+    .mono { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--indigo-700); font-weight: 600; }
+    .badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; }
+    .badge-ok { background: var(--emerald-50); color: var(--emerald-600); }
+    .badge-warn { background: var(--gold-50); color: var(--gold-600); }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none; border: 1px solid var(--slate-300); background: #fff; color: var(--navy-900); cursor: pointer; }
+    .btn:hover { border-color: var(--indigo-700); color: var(--indigo-700); }
+    .btn-gold { background: var(--gold-500); color: var(--navy-950); border-color: var(--gold-600); }
+    .btn-gold:hover { background: var(--gold-600); color: #fff; }
+    .empty { padding: 48px; text-align: center; color: var(--slate-400); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="material-symbols-outlined" style="color:var(--gold-500);font-size:28px">shield_with_heart</span>
+    <div>
+      <div class="brand-title">AmBright <span>Global</span></div>
+      <div class="brand-sub">Trade Desk Operations Console · IEC 0512849182</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="/"><span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">public</span> View Main Portal</a>
+    <a href="/proforma"><span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle">receipt_long</span> Specimen Proforma</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="lbl">Pending RFQ Inquiries</div>
+      <div class="val" id="statRfqCount">0</div>
+      <div class="note"><span class="material-symbols-outlined" style="font-size:16px">timer</span>4h SLA Active</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Active Export Corridors</div>
+      <div class="val">4</div>
+      <div class="note">GCC · EU · Transatlantic · ASEAN</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Pre-Shipment Inspections</div>
+      <div class="val">100%</div>
+      <div class="note">SGS · Intertek · TÜV Witnessed</div>
+    </div>
+    <div class="stat-card">
+      <div class="lbl">Parent Entity</div>
+      <div class="val" style="font-size:16px;margin-top:10px">Ambright Tech India</div>
+      <div class="note" style="color:var(--slate-500)">CIN: U72900MH2019PTC3281</div>
+    </div>
+  </div>
+
+  <!-- RFQ Submissions Panel -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2><span class="material-symbols-outlined" style="color:var(--indigo-700)">inbox</span>Incoming Commercial RFQ Inquiries</h2>
+      <button class="btn" onclick="fetchRfqs()"><span class="material-symbols-outlined" style="font-size:15px">refresh</span>Refresh</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Reference</th>
+            <th>Received (IST)</th>
+            <th>Buyer Legal Entity</th>
+            <th>Commodity Required</th>
+            <th>Quantity</th>
+            <th>POD / Terms</th>
+            <th>SLA Deadline</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rfqTableBody">
+          <tr><td colspan="8" class="empty">Loading submitted inquiries...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Supplier Onboarding Panel -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2><span class="material-symbols-outlined" style="color:var(--gold-600)">precision_manufacturing</span>Factory &amp; Mill Onboarding Applications</h2>
+      <button class="btn" onclick="fetchSuppliers()"><span class="material-symbols-outlined" style="font-size:15px">refresh</span>Refresh</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Supplier ID</th>
+            <th>Registered Unit Name</th>
+            <th>GSTIN</th>
+            <th>Product Category</th>
+            <th>Contact Email</th>
+            <th>Audit Status</th>
+          </tr>
+        </thead>
+        <tbody id="supplierTableBody">
+          <tr><td colspan="6" class="empty">Loading supplier applications...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+async function fetchRfqs() {
+  const tbody = document.getElementById("rfqTableBody");
+  try {
+    const res = await fetch("/api/rfq/list");
+    const list = await res.json();
+    document.getElementById("statRfqCount").textContent = list.length;
+    if (!list.length) {
+      tbody.innerHTML = '<tr><td colspan="8" class="empty">No inquiries in queue. Submit one through the main RFQ Desk!</td></tr>';
+      return;
+    }
+    tbody.innerHTML = list.map(item => {
+      const d = new Date(item.receivedAt);
+      const timeStr = d.toLocaleDateString("en-GB", { day:"numeric", month:"short" }) + " " + d.toLocaleTimeString("en-GB", { hour:"2-digit", minute:"2-digit" });
+      const sla = new Date(item.slaResponseTarget);
+      const slaStr = sla.toLocaleTimeString("en-GB", { hour:"2-digit", minute:"2-digit" }) + " IST";
+      return `
+        <tr>
+          <td class="mono">${item.rfqReference}</td>
+          <td>${timeStr}</td>
+          <td><b>${item.corporate.companyLegalEntity}</b><br><small style="color:var(--slate-500)">${item.corporate.procurementOfficer} (${item.corporate.corporateEmail})</small></td>
+          <td><b>${item.orderSpecs.productCategory}</b><br><small style="color:var(--slate-500)">${item.orderSpecs.specificGrade || "Standard"}</small></td>
+          <td>${item.orderSpecs.quantity}</td>
+          <td><b>${item.tradeFinance.incoterm}</b> ${item.orderSpecs.portOfDischarge}</td>
+          <td><span class="badge badge-warn">${slaStr}</span></td>
+          <td>
+            <a href="/proforma?ref=${item.rfqReference}" target="_blank" class="btn btn-gold" style="font-size:11px;padding:4px 8px">
+              <span class="material-symbols-outlined" style="font-size:14px">receipt_long</span>Issue PI
+            </a>
+          </td>
+        </tr>
+      `;
+    }).join("");
+  } catch (err) {
+    tbody.innerHTML = '<tr><td colspan="8" class="empty" style="color:#ba1a1a">Failed to load inquiries: ' + err.message + '</td></tr>';
+  }
+}
+
+async function fetchSuppliers() {
+  const tbody = document.getElementById("supplierTableBody");
+  try {
+    const res = await fetch("/api/supplier/list");
+    const list = await res.json();
+    if (!list.length) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty">No supplier registrations found.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = list.map(item => `
+      <tr>
+        <td class="mono">${item.supplierId}</td>
+        <td><b>${item.unitName}</b></td>
+        <td class="mono">${item.gstin}</td>
+        <td>${item.category}</td>
+        <td>${item.email}</td>
+        <td><span class="badge badge-ok">${item.status}</span></td>
+      </tr>
+    `).join("");
+  } catch (err) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty" style="color:#ba1a1a">Failed to load suppliers: ' + err.message + '</td></tr>';
+  }
+}
+
+fetchRfqs();
+fetchSuppliers();
+</script>
+
+</body>
+</html>
