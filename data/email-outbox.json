@@ -1,0 +1,28 @@
+[
+  {
+    "id": "EML-210735",
+    "timestamp": "2026-11-09T18:00:10.735Z",
+    "to": "trade@ambrightglobal.com",
+    "from": "trade@ambrightglobal.com",
+    "subject": "🔥 [NEW RFQ ALERT] RFQ-2611-6502 - Hamburg Spedition & Trade GmbH (20 MT Industrial Valves & Precision Castings)",
+    "type": "TRADE_DESK_ALERT",
+    "reference": "RFQ-2611-6502",
+    "status": "QUEUED_OUTBOX",
+    "transport": "LOCAL_OUTBOX",
+    "deliveryDetail": "Stored in Outbox",
+    "preview": "NEW COMMERCIAL RFQ RECEIVED:\n\nReference: RFQ-2611-6502\nCompany: Hamburg Spedition & Trade GmbH\nContact: Klaus Schneider (klaus.schneider@hamburgspedition.de, +4..."
+  },
+  {
+    "id": "EML-210735",
+    "timestamp": "2026-11-09T18:00:10.735Z",
+    "to": "klaus.schneider@hamburgspedition.de",
+    "from": "trade@ambrightglobal.com",
+    "subject": "[AmBright Global] Formal Quotation Acknowledged: RFQ-2611-6502 - Hamburg Spedition & Trade GmbH",
+    "type": "BUYER_ACKNOWLEDGEMENT",
+    "reference": "RFQ-2611-6502",
+    "status": "QUEUED_OUTBOX",
+    "transport": "LOCAL_OUTBOX",
+    "deliveryDetail": "Stored in Outbox",
+    "preview": "Dear Klaus Schneider,\n\nThank you for submitting your procurement requirement to AmBright Global (Ambright Technologies India Pvt Ltd).\n\nInquiry Reference: RFQ-2..."
+  }
+]

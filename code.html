@@ -43,7 +43,9 @@
   <meta name="twitter:image:alt" content="AmBright Global Export Portal">
 
   <!-- Favicon & Preconnects -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230B192C'/%3E%3Ccircle cx='24' cy='26' r='12' fill='none' stroke='%23C7D2FE' stroke-width='2.5'/%3E%3Cpath d='M10 26h28' stroke='%23F59E0B' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+  <link rel="alternate icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://lh3.googleusercontent.com">
@@ -265,18 +267,45 @@
 
   <div class="main-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="AmBright Global — home">
+      <a class="brand" href="/" aria-label="AmBright Global — home">
         <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
           <defs>
-            <linearGradient id="bmG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E1B4B"/><stop offset="1" stop-color="#0B192C"/></linearGradient>
-            <linearGradient id="bmS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FCD34D"/><stop offset="1" stop-color="#D97706"/></linearGradient>
+            <radialGradient id="bmGlobe" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.95"/>
+              <stop offset="45%" stop-color="#0284C7" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#0B192C" stop-opacity="0.98"/>
+            </radialGradient>
+            <linearGradient id="bmMono" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#38BDF8"/>
+              <stop offset="30%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#1D4ED8"/>
+            </linearGradient>
+            <linearGradient id="bmGold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FDE68A"/>
+              <stop offset="50%" stop-color="#F59E0B"/>
+              <stop offset="100%" stop-color="#D97706"/>
+            </linearGradient>
           </defs>
-          <rect width="48" height="48" rx="12" fill="url(#bmG)"/>
-          <circle cx="24" cy="25" r="12.5" fill="none" stroke="#C7D2FE" stroke-width="1.8"/>
-          <ellipse cx="24" cy="25" rx="5.5" ry="12.5" fill="none" stroke="#C7D2FE" stroke-width="1.4" opacity=".7"/>
-          <path d="M12 21h24M12 29h24" stroke="#C7D2FE" stroke-width="1.2" opacity=".5"/>
-          <path d="M8 25h32" stroke="url(#bmS)" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="35" cy="13" r="3.2" fill="#F59E0B"/>
+          <rect width="48" height="48" rx="11" fill="#0B192C"/>
+          <rect width="46" height="46" x="1" y="1" rx="10" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <circle cx="24" cy="24" r="17.5" fill="url(#bmGlobe)"/>
+          <ellipse cx="24" cy="24" rx="6" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+          <ellipse cx="24" cy="24" rx="12" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.4"/>
+          <line x1="6.5" y1="24" x2="41.5" y2="24" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+          <path d="M 9.5 16.5 Q 24 20.5 38.5 16.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+          <path d="M 9.5 31.5 Q 24 27.5 38.5 31.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+          <path d="M 7.5 25 C 7.5 15, 40.5 15, 40.5 25" fill="none" stroke="url(#bmGold)" stroke-width="1.1" stroke-dasharray="2 1.5" opacity="0.5"/>
+          <g transform="translate(24, 24) scale(0.26) translate(-74.5, -74.5)">
+            <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+                  fill="#0B192C" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+                  fill="url(#bmMono)" fill-rule="evenodd" stroke="#60A5FA" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M 57 108 L 74.5 128 L 92 108" fill="none" stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round"/>
+          </g>
+          <path d="M 6 27 C 6 38, 42 38, 42 27" fill="none" stroke="url(#bmGold)" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="38" cy="30" r="1.8" fill="#FCD34D"/>
+          <circle cx="38" cy="30" r="0.8" fill="#FFFFFF"/>
+          <circle cx="10" cy="30" r="1.2" fill="#F59E0B"/>
         </svg>
         <span class="brand-text">
           <span class="brand-name">AmBright <span>Global</span></span>
@@ -286,12 +315,13 @@
 
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
         <ul>
-          <li><a href="#products" data-i18n="nav_products">Products</a></li>
-          <li><a href="#rfq" data-i18n="nav_rfq">Buyer RFQ</a></li>
-          <li><a href="#suppliers" data-open="supplierDialog" data-i18n="nav_suppliers">Suppliers</a></li>
-          <li><a href="#supply-chain" data-i18n="nav_supply_chain">Supply Chain</a></li>
-          <li><a href="#compliance" data-i18n="nav_compliance">Compliance</a></li>
-          <li><a href="#corporate" data-i18n="nav_corporate">Corporate</a></li>
+          <li><a href="/products/agro-commodities.html">Agro &amp; Spices</a></li>
+          <li><a href="/products/specialty-polymers.html">Polymers</a></li>
+          <li><a href="/products/engineering-hardware.html">Engineering</a></li>
+          <li><a href="/products/minerals-industrial.html">Minerals</a></li>
+          <li><a href="/trade-guides/incoterms-2020.html">Incoterms</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -1047,8 +1077,46 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="AmBright Global — back to top">
-          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#12243D"/><circle cx="24" cy="25" r="12.5" fill="none" stroke="#C7D2FE" stroke-width="1.8"/><ellipse cx="24" cy="25" rx="5.5" ry="12.5" fill="none" stroke="#C7D2FE" stroke-width="1.4" opacity=".7"/><path d="M8 25h32" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/><circle cx="35" cy="13" r="3.2" fill="#F59E0B"/></svg>
+        <a class="brand" href="/" aria-label="AmBright Global — back to top">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <radialGradient id="bmGlobeF" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.95"/>
+                <stop offset="45%" stop-color="#0284C7" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#0B192C" stop-opacity="0.98"/>
+              </radialGradient>
+              <linearGradient id="bmMonoF" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#38BDF8"/>
+                <stop offset="30%" stop-color="#2563EB"/>
+                <stop offset="100%" stop-color="#1D4ED8"/>
+              </linearGradient>
+              <linearGradient id="bmGoldF" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FDE68A"/>
+                <stop offset="50%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#D97706"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="11" fill="#0B192C"/>
+            <rect width="46" height="46" x="1" y="1" rx="10" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <circle cx="24" cy="24" r="17.5" fill="url(#bmGlobeF)"/>
+            <ellipse cx="24" cy="24" rx="6" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+            <ellipse cx="24" cy="24" rx="12" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.4"/>
+            <line x1="6.5" y1="24" x2="41.5" y2="24" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+            <path d="M 9.5 16.5 Q 24 20.5 38.5 16.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+            <path d="M 9.5 31.5 Q 24 27.5 38.5 31.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+            <path d="M 7.5 25 C 7.5 15, 40.5 15, 40.5 25" fill="none" stroke="url(#bmGoldF)" stroke-width="1.1" stroke-dasharray="2 1.5" opacity="0.5"/>
+            <g transform="translate(24, 24) scale(0.26) translate(-74.5, -74.5)">
+              <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+                    fill="#0B192C" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+                    fill="url(#bmMonoF)" fill-rule="evenodd" stroke="#60A5FA" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M 57 108 L 74.5 128 L 92 108" fill="none" stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round"/>
+            </g>
+            <path d="M 6 27 C 6 38, 42 38, 42 27" fill="none" stroke="url(#bmGoldF)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="38" cy="30" r="1.8" fill="#FCD34D"/>
+            <circle cx="38" cy="30" r="0.8" fill="#FFFFFF"/>
+            <circle cx="10" cy="30" r="1.2" fill="#F59E0B"/>
+          </svg>
           <span class="brand-text"><span class="brand-name">AmBright <span>Global</span></span><span class="brand-sub">AMBRIGHT TECH INDIA PVT LTD</span></span>
         </a>
         <p><strong>AmBright Global</strong> is the international merchant export and trade division of <strong>Ambright Technologies India Private Limited</strong>, holding Importer-Exporter Code <strong>IEC 0512849182</strong> issued by the Directorate General of Foreign Trade, Ministry of Commerce &amp; Industry, Government of India. All foreign exchange transactions are routed through an Authorised Dealer Category-I bank in compliance with FEMA, 1999.</p>
@@ -1063,35 +1131,35 @@
           <nav aria-label="Trade categories">
             <h3>Trade Categories</h3>
             <ul>
-              <li><a href="#products" data-filter-link="agri">Agri &amp; Organic Spices</a></li>
-              <li><a href="#products" data-filter-link="agri">Basmati &amp; Grains</a></li>
-              <li><a href="#products" data-filter-link="eng">Valves &amp; Castings</a></li>
-              <li><a href="#products" data-filter-link="min">Minerals &amp; Ores</a></li>
-              <li><a href="#products" data-filter-link="agri">Jute Geotextiles</a></li>
-              <li><a href="#products" data-filter-link="eng">Polymers &amp; Resins</a></li>
+              <li><a href="/products/agro-commodities.html">Agro Commodities &amp; Spices</a></li>
+              <li><a href="/products/specialty-polymers.html">Specialty Polymers &amp; Resins</a></li>
+              <li><a href="/products/engineering-hardware.html">Engineering Fasteners &amp; Valves</a></li>
+              <li><a href="/products/minerals-industrial.html">Bentonite &amp; Minerals</a></li>
+              <li><a href="#products" data-filter-link="agri">Basmati &amp; Non-Basmati Rice</a></li>
+              <li><a href="#inventory">Live Bonded Inventory</a></li>
             </ul>
           </nav>
-          <nav aria-label="Trade and export services">
-            <h3>Trade &amp; Export Services</h3>
+          <nav aria-label="Global Corridors & Guides">
+            <h3>Global Corridors &amp; Guides</h3>
             <ul>
-              <li><a href="#products">Bespoke OEM Sourcing</a></li>
-              <li><a href="#compliance">Pre-Shipment Inspection</a></li>
-              <li><a href="#supply-chain">Freight Forwarding</a></li>
-              <li><a href="#supply-chain">Customs Brokerage (CHA)</a></li>
-              <li><a href="#calculator">Spot Freight Calculator</a></li>
-              <li><a href="#suppliers" data-open="supplierDialog">Supplier Onboarding</a></li>
+              <li><a href="/destinations/middle-east-uae.html">Middle East (Jebel Ali / Dammam)</a></li>
+              <li><a href="/destinations/europe-eu.html">Europe (Rotterdam / Antwerp)</a></li>
+              <li><a href="/destinations/americas-usa.html">Americas (Houston / New York)</a></li>
+              <li><a href="/destinations/southeast-asia.html">Southeast Asia (ASEAN Ports)</a></li>
+              <li><a href="/trade-guides/incoterms-2020.html">Incoterms 2020 Complete Guide</a></li>
+              <li><a href="/trade-guides/letter-of-credit-trade-finance.html">LC at Sight &amp; Escrow Security</a></li>
             </ul>
           </nav>
           <nav aria-label="Portals and desk">
             <h3>Portals &amp; Desk</h3>
             <ul>
+              <li><a href="/trade-guides/how-to-import-from-india.html">How to Import from India</a></li>
+              <li><a href="/about.html">About Corporate Profile</a></li>
+              <li><a href="/contact.html">Global Trade Desk &amp; Hotline</a></li>
               <li><a href="#rfq">RFQ &amp; Quotation Desk</a></li>
               <li><a href="#tracker">BL / Container Tracking</a></li>
               <li><a href="/proforma" target="_blank">Proforma Invoice Desk</a></li>
               <li><a href="/admin" target="_blank">Trade Desk Operations Console</a></li>
-              <li><a href="#escrow" data-open="escrowDialog">Escrow Trade Settlement</a></li>
-              <li><a href="#top" data-open="accountDialog">Buyer Portal Sign-in</a></li>
-              <li><a href="#products" data-open="inventoryDialog">Catalogue 2025 &amp; Inventory</a></li>
             </ul>
           </nav>
           <nav aria-label="Statutory compliance">

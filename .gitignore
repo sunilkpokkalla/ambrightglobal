@@ -17,4 +17,5 @@ Thumbs.db
 # Temporary / Scratch files
 .system_generated/
 *.tmp
+scratch/
 

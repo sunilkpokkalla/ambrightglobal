@@ -1,5 +1,34 @@
 [
   {
+    "rfqReference": "RFQ-2611-6502",
+    "receivedAt": "2026-11-09T18:00:10.730Z",
+    "corporate": {
+      "companyLegalEntity": "Hamburg Spedition & Trade GmbH",
+      "procurementOfficer": "Klaus Schneider",
+      "designation": "Director of Supply Chain",
+      "corporateEmail": "klaus.schneider@hamburgspedition.de",
+      "phone": "+49 40 1234 5678",
+      "countryOfIncorporation": "Germany",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "Industrial Valves & Precision Castings",
+      "specificGrade": "DI Gate Valve DN150 PN16 (EN 1171)",
+      "quantity": "20 MT",
+      "packaging": "ISPM-15 Wooden Crates (VCI)",
+      "portOfDischarge": "Hamburg (DEHAM)",
+      "orderFrequency": "Spot / One-time",
+      "notes": ""
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "Confirmed Irrevocable LC at Sight",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-09T22:00:10.730Z"
+  },
+  {
     "rfqReference": "RFQ-2611-2166",
     "receivedAt": "2026-11-09T17:47:09.457Z",
     "corporate": {

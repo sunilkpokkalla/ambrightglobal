@@ -9,12 +9,93 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ambrightglobal.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ambrightglobal.com/" />
+    <image:image>
+      <image:loc>https://ambrightglobal.com/assets/og-image.png</image:loc>
+      <image:title>AmBright Global Institutional Multi-Commodity Trade Desk</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://ambrightglobal.com/proforma</loc>
+    <loc>https://ambrightglobal.com/products/agro-commodities.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/products/specialty-polymers.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/products/engineering-hardware.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/products/minerals-industrial.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/destinations/middle-east-uae.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/destinations/europe-eu.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/destinations/americas-usa.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/destinations/southeast-asia.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/trade-guides/incoterms-2020.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/trade-guides/letter-of-credit-trade-finance.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/trade-guides/how-to-import-from-india.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/about.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/contact.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ambrightglobal.com/proforma.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 </urlset>
-

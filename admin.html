@@ -54,7 +54,45 @@
 
 <header>
   <div class="brand">
-    <span class="material-symbols-outlined" style="color:var(--gold-500);font-size:28px">shield_with_heart</span>
+    <svg class="brand-mark" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+      <defs>
+        <radialGradient id="adGlobe" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.95"/>
+          <stop offset="45%" stop-color="#0284C7" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#0B192C" stop-opacity="0.98"/>
+        </radialGradient>
+        <linearGradient id="adMono" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#38BDF8"/>
+          <stop offset="30%" stop-color="#2563EB"/>
+          <stop offset="100%" stop-color="#1D4ED8"/>
+        </linearGradient>
+        <linearGradient id="adGold" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#FDE68A"/>
+          <stop offset="50%" stop-color="#F59E0B"/>
+          <stop offset="100%" stop-color="#D97706"/>
+        </linearGradient>
+      </defs>
+      <rect width="48" height="48" rx="11" fill="#0B192C"/>
+      <rect width="46" height="46" x="1" y="1" rx="10" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+      <circle cx="24" cy="24" r="17.5" fill="url(#adGlobe)"/>
+      <ellipse cx="24" cy="24" rx="6" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+      <ellipse cx="24" cy="24" rx="12" ry="17.5" fill="none" stroke="#BAE6FD" stroke-width="0.75" opacity="0.4"/>
+      <line x1="6.5" y1="24" x2="41.5" y2="24" stroke="#BAE6FD" stroke-width="0.75" opacity="0.6"/>
+      <path d="M 9.5 16.5 Q 24 20.5 38.5 16.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+      <path d="M 9.5 31.5 Q 24 27.5 38.5 31.5" fill="none" stroke="#BAE6FD" stroke-width="0.65" opacity="0.45"/>
+      <path d="M 7.5 25 C 7.5 15, 40.5 15, 40.5 25" fill="none" stroke="url(#adGold)" stroke-width="1.1" stroke-dasharray="2 1.5" opacity="0.5"/>
+      <g transform="translate(24, 24) scale(0.26) translate(-74.5, -74.5)">
+        <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+              fill="#0B192C" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M 65 6 L 84 6 L 116 88 L 138 88 L 145 108 L 126 108 L 138 143 L 107 143 L 92 108 L 74.5 128 L 57 108 L 42 143 L 11 143 L 23 108 L 4 108 L 11 88 L 33 88 Z M 74.5 64 L 90 103 L 74.5 110 L 59 103 Z"
+              fill="url(#adMono)" fill-rule="evenodd" stroke="#60A5FA" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M 57 108 L 74.5 128 L 92 108" fill="none" stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+      <path d="M 6 27 C 6 38, 42 38, 42 27" fill="none" stroke="url(#adGold)" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="38" cy="30" r="1.8" fill="#FCD34D"/>
+      <circle cx="38" cy="30" r="0.8" fill="#FFFFFF"/>
+      <circle cx="10" cy="30" r="1.2" fill="#F59E0B"/>
+    </svg>
     <div>
       <div class="brand-title">AmBright <span>Global</span></div>
       <div class="brand-sub">Trade Desk Operations Console · IEC 0512849182</div>
@@ -84,9 +122,9 @@
       <div class="note">SGS · Intertek · TÜV Witnessed</div>
     </div>
     <div class="stat-card">
-      <div class="lbl">Parent Entity</div>
-      <div class="val" style="font-size:16px;margin-top:10px">Ambright Tech India</div>
-      <div class="note" style="color:var(--slate-500)">CIN: U72900MH2019PTC3281</div>
+      <div class="lbl">Outbox Deliveries</div>
+      <div class="val" id="statEmailCount">0</div>
+      <div class="note" style="color:var(--emerald-600)"><span class="material-symbols-outlined" style="font-size:16px">mark_email_read</span>Buyer &amp; Trade Desk</div>
     </div>
   </div>
 
@@ -137,6 +175,31 @@
         </thead>
         <tbody id="supplierTableBody">
           <tr><td colspan="6" class="empty">Loading supplier applications...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Email Notifications Outbox Panel -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2><span class="material-symbols-outlined" style="color:var(--emerald-600)">mark_email_read</span>Dispatched Email Notifications &amp; Outbox Queue</h2>
+      <button class="btn" onclick="fetchEmails()"><span class="material-symbols-outlined" style="font-size:15px">refresh</span>Refresh</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Email ID</th>
+            <th>Timestamp (IST)</th>
+            <th>Recipient (To)</th>
+            <th>Subject &amp; Notification Type</th>
+            <th>Transport</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="emailTableBody">
+          <tr><td colspan="6" class="empty">Loading outbox deliveries...</td></tr>
         </tbody>
       </table>
     </div>
@@ -205,8 +268,40 @@ async function fetchSuppliers() {
   }
 }
 
+async function fetchEmails() {
+  const tbody = document.getElementById("emailTableBody");
+  try {
+    const res = await fetch("/api/emails");
+    const list = await res.json();
+    const countEl = document.getElementById("statEmailCount");
+    if (countEl) countEl.textContent = list.length;
+    if (!list.length) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty">No dispatched emails recorded yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = list.map(item => {
+      const d = new Date(item.timestamp);
+      const timeStr = d.toLocaleDateString("en-GB", { day:"numeric", month:"short" }) + " " + d.toLocaleTimeString("en-GB", { hour:"2-digit", minute:"2-digit" });
+      const isSent = item.status === "SENT";
+      return `
+        <tr>
+          <td class="mono">${item.id}</td>
+          <td>${timeStr}</td>
+          <td><b>${item.to}</b><br><small style="color:var(--slate-500)">From: ${item.from}</small></td>
+          <td><b>${item.subject}</b><br><small style="color:var(--slate-500)">${item.preview}</small></td>
+          <td><span class="mono" style="font-size:11px">${item.transport}</span></td>
+          <td><span class="badge ${isSent ? 'badge-ok' : 'badge-warn'}">${item.status}</span></td>
+        </tr>
+      `;
+    }).join("");
+  } catch (err) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty" style="color:#ba1a1a">Failed to load emails: ' + err.message + '</td></tr>';
+  }
+}
+
 fetchRfqs();
 fetchSuppliers();
+fetchEmails();
 </script>
 
 </body>

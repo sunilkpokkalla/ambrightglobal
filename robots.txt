@@ -1,19 +1,36 @@
 # ==============================================================================
-# AmBright Global — Robots Exclusion Standard
+# AmBright Global — Robots Exclusion Standard (RFC 9309)
 # Legal Entity: Ambright Technologies India Private Limited
-# DGFT IEC: 0512849182 | FIEO Premier Member | ISO 9001:2015
+# Division: AmBright Global (DGFT IEC: 0512849182 | FIEO Premier Member)
 # ==============================================================================
 
 User-agent: *
 Allow: /
+Allow: /products/
+Allow: /destinations/
+Allow: /trade-guides/
+Allow: /about.html
+Allow: /contact.html
+Allow: /proforma.html
 Allow: /assets/
-Allow: /proforma
 Disallow: /admin
 Disallow: /admin.html
 Disallow: /api/
 Disallow: /data/
 
+# Targeted Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
 # Host & Sitemap Directives
 Host: https://ambrightglobal.com
 Sitemap: https://ambrightglobal.com/sitemap.xml
-
