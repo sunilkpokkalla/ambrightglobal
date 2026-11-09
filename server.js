@@ -410,6 +410,31 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // 5b. Get All RFQs (for Admin / Trade Desk)
+  if (pathname === "/api/rfq/list" && req.method === "GET") {
+    try {
+      const file = path.join(DATA_DIR, "rfq-submissions.json");
+      const list = fs.existsSync(file) ? JSON.parse(await fsp.readFile(file, "utf-8")) : [];
+      return sendJson(res, 200, list);
+    } catch (err) {
+      return sendJson(res, 500, { error: "Failed to read RFQs" });
+    }
+  }
+
+  // 5c. Get Single RFQ by Reference
+  if (pathname.startsWith("/api/rfq/") && req.method === "GET") {
+    const ref = pathname.split("/")[3];
+    try {
+      const file = path.join(DATA_DIR, "rfq-submissions.json");
+      const list = fs.existsSync(file) ? JSON.parse(await fsp.readFile(file, "utf-8")) : [];
+      const item = list.find((x) => x.rfqReference === ref);
+      if (item) return sendJson(res, 200, item);
+      return sendJson(res, 404, { error: "RFQ not found" });
+    } catch (err) {
+      return sendJson(res, 500, { error: "Failed to lookup RFQ" });
+    }
+  }
+
   // 6. Supplier Onboarding API
   if (pathname === "/api/supplier" && req.method === "POST") {
     try {
@@ -441,12 +466,27 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // 6b. Get Supplier Registrations
+  if (pathname === "/api/supplier/list" && req.method === "GET") {
+    try {
+      const file = path.join(DATA_DIR, "supplier-registrations.json");
+      const list = fs.existsSync(file) ? JSON.parse(await fsp.readFile(file, "utf-8")) : [];
+      return sendJson(res, 200, list);
+    } catch (err) {
+      return sendJson(res, 500, { error: "Failed to read suppliers" });
+    }
+  }
+
   // =========================================================================
   // STATIC FILE SERVING
   // =========================================================================
 
   if (pathname === "/" || pathname === "/code.html") {
     pathname = "/index.html";
+  } else if (pathname === "/admin") {
+    pathname = "/admin.html";
+  } else if (pathname === "/proforma") {
+    pathname = "/proforma.html";
   }
 
   // Normalize path and prevent directory traversal
