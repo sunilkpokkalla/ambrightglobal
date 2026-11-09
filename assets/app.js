@@ -96,13 +96,216 @@
   const closeCurrency = setupMenu("currencyBtn", "currencyMenu");
   const closeLang = setupMenu("langBtn", "langMenu");
 
-  $$("#langMenu [role=menuitemradio]").forEach((b) =>
+  /* ------------------------------------------------ Multi-Language Dictionary */
+  const I18N = {
+    EN: {
+      btn_lbl: "Global English · EN",
+      nav_products: "Products",
+      nav_rfq: "Buyer RFQ",
+      nav_suppliers: "Suppliers",
+      nav_supply_chain: "Supply Chain",
+      nav_compliance: "Compliance",
+      nav_corporate: "Corporate",
+      btn_rfq: "RFQ Desk",
+      btn_supplier: "Supplier Onboarding",
+      util_tracker: "Consignment / BL Tracking",
+      hero_badge: '<span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>Institutional Global Merchant Exporter</span><span>Incoterms® 2020 Standard Compliant</span><span class="dot"></span><span>Verified Origin: <strong>Republic of India</strong></span>',
+      hero_title: 'Bridging Continents with <span class="accent">Uncompromising Integrity</span> &amp; Precision Supply Chains.',
+      hero_sub: 'AmBright Global sources <strong>directly from audited mills, foundries and farm collectives</strong> across India — eliminating intermediary markups — and enforces <strong>independent pre-shipment inspection on every consignment</strong> before delivering on-spec cargo, on schedule, to institutional buyers in <strong>45+ countries</strong>.',
+      hero_cta_rfq: "Submit Trade RFQ (Instant SLA)",
+      hero_cta_inventory: "Catalogue 2025 & Live Inventory",
+      calc_head: '<span class="material-symbols-outlined">calculate</span>Quick Spot Container &amp; Vessel Calculator',
+      cat_eyebrow: "Export Catalogue · FY 2025–26",
+      cat_title: "High-Yield Commodity Verticals",
+      rfq_eyebrow: "Buyer Portal · Formal Quotation Desk",
+      rfq_title: "Enterprise RFQ & Formal Quotation Desk",
+      corr_eyebrow: "Supply Chain · Ocean Freight Corridors",
+      corr_title: "Ocean Freight Corridors & Real-Time Consignment Tracking",
+      gov_eyebrow: "Corporate Governance & Statutory Legitimacy",
+      gov_title: 'AmBright Global operates under <span>Ambright Technologies India Private Limited</span>',
+      escrow_urgent: '<span class="live-dot"></span>Live Trade Desk · Priority Line',
+      toast: "Language switched to Global English · EN",
+      dir: "ltr",
+      langCode: "en"
+    },
+    DE: {
+      btn_lbl: "Deutsch · DE",
+      nav_products: "Produkte",
+      nav_rfq: "Käufer RFQ",
+      nav_suppliers: "Lieferanten",
+      nav_supply_chain: "Lieferkette",
+      nav_compliance: "Konformität",
+      nav_corporate: "Unternehmen",
+      btn_rfq: "RFQ-Desk",
+      btn_supplier: "Lieferanten Onboarding",
+      util_tracker: "Sendungs- / BL-Verfolgung",
+      hero_badge: '<span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>Institutioneller globaler Exporteur</span><span>Incoterms® 2020 Standardkonform</span><span class="dot"></span><span>Geprüfter Ursprung: <strong>Republik Indien</strong></span>',
+      hero_title: 'Kontinente verbinden mit <span class="accent">Kompromissloser Integrität</span> &amp; Präziser Lieferkette.',
+      hero_sub: 'AmBright Global bezieht <strong>direkt aus geprüften Produktionswerken, Gießereien und Agrarkollektiven</strong> in ganz Indien — ohne Zwischenhändleraufschläge — und garantiert <strong>unabhängige Vorversandkontrollen für jede Sendung</strong> vor Auslieferung an institutionelle Abnehmer in <strong>45+ Ländern</strong>.',
+      hero_cta_rfq: "Handels-RFQ einreichen (4-Std SLA)",
+      hero_cta_inventory: "Katalog 2025 & Live-Bestand",
+      calc_head: '<span class="material-symbols-outlined">calculate</span>Schneller Frachtcontainer- &amp; Schiffsrechner',
+      cat_eyebrow: "Exportkatalog · GJ 2025–26",
+      cat_title: "Hochwertige Export-Rohstoffsparten",
+      rfq_eyebrow: "Käuferportal · Offizieller Angebotsschalter",
+      rfq_title: "Unternehmens-RFQ & Formaler Angebotsschalter",
+      corr_eyebrow: "Lieferkette · Seefracht-Korridore",
+      corr_title: "Seefracht-Korridore & Echtzeit-Sendungsverfolgung",
+      gov_eyebrow: "Unternehmensführung & Gesetzliche Legitimität",
+      gov_title: 'AmBright Global operiert unter <span>Ambright Technologies India Private Limited</span>',
+      escrow_urgent: '<span class="live-dot"></span>Live Trade Desk · Prioritätslinie',
+      toast: "Sprache auf Deutsch umgestellt · DE",
+      dir: "ltr",
+      langCode: "de"
+    },
+    AR: {
+      btn_lbl: "العربية · AR",
+      nav_products: "المنتجات",
+      nav_rfq: "طلب عروض الأسعار",
+      nav_suppliers: "الموردون",
+      nav_supply_chain: "سلسلة الإمداد",
+      nav_compliance: "الامتثال والتراخيص",
+      nav_corporate: "المؤسسة",
+      btn_rfq: "مكتب عروض الأسعار",
+      btn_supplier: "تسجيل الموردين",
+      util_tracker: "تتبع بوليصة الشحن والحاويات",
+      hero_badge: '<span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>مصدر تجاري دولي معتمد</span><span>متوافق مع Incoterms® 2020</span><span class="dot"></span><span>بلد المنشأ المعتمد: <strong>جمهورية الهند</strong></span>',
+      hero_title: 'ربط القارات بـ <span class="accent">نزاهة لا مساومة فيها</span> وسلاسل إمداد فائقة الدقة.',
+      hero_sub: 'تقوم AmBright Global بالتوريد <strong>مباشرة من المصانع والمصاهر والمزارع الهندية المعتمدة</strong> — لإلغاء هوامش الوسطاء — مع فرض <strong>فحص مستقل قبل الشحن بنسبة 100%</strong> للمشترين في أكثر من <strong>45 دولة</strong>.',
+      hero_cta_rfq: "تقديم طلب عرض أسعار تجاري",
+      hero_cta_inventory: "كتالوج 2025 والمخزون المتاح",
+      calc_head: '<span class="material-symbols-outlined">calculate</span>حاسبة الحاويات والشحن البحري الفوري',
+      cat_eyebrow: "كتالوج التصدير السنوي · 2025–26",
+      cat_title: "قطاعات السلع والمنتجات التصديرية الكبرى",
+      rfq_eyebrow: "بوابة المشتري · مكتب طلب عروض الأسعار",
+      rfq_title: "مكتب عروض الأسعار التجارية والمناقصات",
+      corr_eyebrow: "سلسلة الإمداد · ممرات الشحن البحري",
+      corr_title: "ممرات الشحن البحري وتتبع الشحنات المباشر",
+      gov_eyebrow: "الحوكمة المؤسسية والشرعية القانونية",
+      gov_title: 'تعمل AmBright Global تحت مظلة <span>Ambright Technologies India Private Limited</span>',
+      escrow_urgent: '<span class="live-dot"></span>مكتب التجارة المباشر · خط الأولوية',
+      toast: "تم تغيير لغة البوابة إلى العربية · AR",
+      dir: "rtl",
+      langCode: "ar"
+    },
+    ES: {
+      btn_lbl: "Español · ES",
+      nav_products: "Productos",
+      nav_rfq: "RFQ Comprador",
+      nav_suppliers: "Proveedores",
+      nav_supply_chain: "Cadena de Suministro",
+      nav_compliance: "Cumplimiento",
+      nav_corporate: "Corporativo",
+      btn_rfq: "Mesa RFQ",
+      btn_supplier: "Alta Proveedores",
+      util_tracker: "Rastreo de BL / Carga",
+      hero_badge: '<span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>Exportador Comercial Global</span><span>Cumplimiento Incoterms® 2020</span><span class="dot"></span><span>Origen Verificado: <strong>República de la India</strong></span>',
+      hero_title: 'Conectando Continentes con <span class="accent">Integridad Absoluta</span> y Cadenas de Suministro Precisas.',
+      hero_sub: 'AmBright Global adquiere <strong>directamente de fábricas, fundiciones y cooperativas agrícolas certificadas</strong> en toda la India — eliminando comisiones intermedias — y aplica <strong>inspección previa al embarque en cada lote</strong>.',
+      hero_cta_rfq: "Enviar Solicitud RFQ (Respuesta en 4h)",
+      hero_cta_inventory: "Catálogo 2025 e Inventario en Vivo",
+      calc_head: '<span class="material-symbols-outlined">calculate</span>Calculadora Instantánea de Contenedores y Buques',
+      cat_eyebrow: "Catálogo de Exportación · FY 2025–26",
+      cat_title: "Verticales de Materias Primas de Alto Rendimiento",
+      rfq_eyebrow: "Portal de Compradores · Mesa Formal de Cotizaciones",
+      rfq_title: "Mesa de Cotizaciones RFQ Empresarial",
+      corr_eyebrow: "Cadena de Suministro · Corredores de Carga",
+      corr_title: "Corredores de Flete Marítimo y Rastreo en Tiempo Real",
+      gov_eyebrow: "Gobernanza Corporativa y Legitimidad Legal",
+      gov_title: 'AmBright Global opera bajo <span>Ambright Technologies India Private Limited</span>',
+      escrow_urgent: '<span class="live-dot"></span>Mesa de Negociación en Vivo · Línea Prioritaria',
+      toast: "Idioma cambiado a Español · ES",
+      dir: "ltr",
+      langCode: "es"
+    },
+    ID: {
+      btn_lbl: "Bahasa Indonesia · ID",
+      nav_products: "Produk",
+      nav_rfq: "Permintaan RFQ",
+      nav_suppliers: "Pemasok",
+      nav_supply_chain: "Rantai Pasok",
+      nav_compliance: "Kepatuhan",
+      nav_corporate: "Korporasi",
+      btn_rfq: "Meja RFQ",
+      btn_supplier: "Pendaftaran Pemasok",
+      util_tracker: "Pelacakan Muatan / BL",
+      hero_badge: '<span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>Eksportir Dagang Global</span><span>Kepatuhan Standar Incoterms® 2020</span><span class="dot"></span><span>Asal Terverifikasi: <strong>Republik India</strong></span>',
+      hero_title: 'Menghubungkan Benua dengan <span class="accent">Integritas Tanpa Kompromi</span> &amp; Rantai Pasokan Presisi.',
+      hero_sub: 'AmBright Global mengambil pasokan <strong>langsung dari pabrik, pengecoran dan kelompok tani terakreditasi</strong> di seluruh India — menghilangkan biaya perantara — serta menerapkan <strong>inspeksi pra-pengiriman independen pada setiap konsinyasi</strong>.',
+      hero_cta_rfq: "Kirim Permintaan RFQ (SLA 4 Jam)",
+      hero_cta_inventory: "Katalog 2025 & Stok Siap Kirim",
+      calc_head: '<span class="material-symbols-outlined">calculate</span>Kalkulator Cepat Kontainer &amp; Kapal Kargo',
+      cat_eyebrow: "Katalog Ekspor · TA 2025–26",
+      cat_title: "Komoditas Ekspor Unggulan Berdaya Saing Tinggi",
+      rfq_eyebrow: "Portal Pembeli · Meja Penawaran Formal",
+      rfq_title: "Meja Penawaran Harga & RFQ Korporat",
+      corr_eyebrow: "Rantai Pasokan · Jalur Kargo Laut",
+      corr_title: "Jalur Kargo Laut & Pelacakan Pengiriman Real-Time",
+      gov_eyebrow: "Tata Kelola Perusahaan & Legalitas Statuter",
+      gov_title: 'AmBright Global beroperasi di bawah <span>Ambright Technologies India Private Limited</span>',
+      escrow_urgent: '<span class="live-dot"></span>Meja Dagang Aktif · Jalur Prioritas',
+      toast: "Bahasa diubah ke Bahasa Indonesia · ID",
+      dir: "ltr",
+      langCode: "id"
+    }
+  };
+
+  function setLanguage(langCode, showToast = true) {
+    const code = (langCode || "EN").toUpperCase();
+    const data = I18N[code] || I18N.EN;
+
+    // 1. Update button label
+    const btnLbl = $("#langBtn .lbl");
+    if (btnLbl) btnLbl.textContent = data.btn_lbl;
+
+    // 2. Set document attributes (direction & language)
+    document.documentElement.lang = data.langCode;
+    document.documentElement.dir = data.dir;
+
+    // 3. Update radio button states
+    $$("#langMenu [data-lang]").forEach((b) => {
+      b.setAttribute("aria-checked", String(b.dataset.lang === code));
+    });
+
+    // 4. Update elements with text translation
+    $$("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (data[key]) el.textContent = data[key];
+    });
+
+    // 5. Update elements with HTML translation
+    $$("[data-i18n-html]").forEach((el) => {
+      const key = el.dataset.i18nHtml;
+      if (data[key]) el.innerHTML = data[key];
+    });
+
+    // 6. Save preference
+    try {
+      localStorage.setItem("ambright_lang", code);
+    } catch (_) {}
+
+    // 7. Toast notification
+    if (showToast) {
+      toast(data.toast, "translate");
+    }
+  }
+
+  // Handle language option clicks
+  $$("#langMenu [data-lang]").forEach((b) =>
     b.addEventListener("click", () => {
-      $$("#langMenu [role=menuitemradio]").forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+      const targetLang = b.dataset.lang;
+      setLanguage(targetLang, true);
       closeLang();
-      if (!b.textContent.includes("English")) toast("Localised portal coming soon — your trade officer can correspond in this language.", "translate");
     })
   );
+
+  // Restore saved language on load
+  try {
+    const savedLang = localStorage.getItem("ambright_lang");
+    if (savedLang && I18N[savedLang]) {
+      setLanguage(savedLang, false);
+    }
+  } catch (_) {}
 
   /* ---------------------------------------------- Currency & price basis */
   const FX = { USD: 1, EUR: 0.92, AED: 3.6725, GBP: 0.79, INR: 84.1 };

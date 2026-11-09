@@ -249,16 +249,16 @@
           </button>
           <div class="menu" id="langMenu" role="menu" hidden>
             <div class="menu-label">Portal language</div>
-            <button role="menuitemradio" aria-checked="true">Global English <small>EN</small></button>
-            <button role="menuitemradio" aria-checked="false">Deutsch <small>DE</small></button>
-            <button role="menuitemradio" aria-checked="false">العربية <small>AR</small></button>
-            <button role="menuitemradio" aria-checked="false">Español <small>ES</small></button>
-            <button role="menuitemradio" aria-checked="false">Bahasa <small>ID</small></button>
+            <button role="menuitemradio" data-lang="EN" aria-checked="true">Global English <small>EN</small></button>
+            <button role="menuitemradio" data-lang="DE" aria-checked="false">Deutsch <small>DE</small></button>
+            <button role="menuitemradio" data-lang="AR" aria-checked="false">العربية <small>AR</small></button>
+            <button role="menuitemradio" data-lang="ES" aria-checked="false">Español <small>ES</small></button>
+            <button role="menuitemradio" data-lang="ID" aria-checked="false">Bahasa <small>ID</small></button>
           </div>
         </div>
 
         <span class="util-divider"></span>
-        <a class="util-btn" href="#tracker" style="color:#FCD34D"><span class="material-symbols-outlined">near_me</span><span class="lbl">Consignment / BL Tracking</span></a>
+        <a class="util-btn" href="#tracker" style="color:#FCD34D"><span class="material-symbols-outlined">near_me</span><span class="lbl" data-i18n="util_tracker">Consignment / BL Tracking</span></a>
       </div>
     </div>
   </div>
@@ -286,18 +286,18 @@
 
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
         <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#rfq">Buyer RFQ</a></li>
-          <li><a href="#suppliers" data-open="supplierDialog">Suppliers</a></li>
-          <li><a href="#supply-chain">Supply Chain</a></li>
-          <li><a href="#compliance">Compliance</a></li>
-          <li><a href="#corporate">Corporate</a></li>
+          <li><a href="#products" data-i18n="nav_products">Products</a></li>
+          <li><a href="#rfq" data-i18n="nav_rfq">Buyer RFQ</a></li>
+          <li><a href="#suppliers" data-open="supplierDialog" data-i18n="nav_suppliers">Suppliers</a></li>
+          <li><a href="#supply-chain" data-i18n="nav_supply_chain">Supply Chain</a></li>
+          <li><a href="#compliance" data-i18n="nav_compliance">Compliance</a></li>
+          <li><a href="#corporate" data-i18n="nav_corporate">Corporate</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-gold btn-sm" href="#rfq"><span class="material-symbols-outlined">request_quote</span><span class="btn-rfq-label">RFQ Desk</span></a>
-        <button class="btn btn-outline btn-sm" type="button" data-open="supplierDialog"><span class="material-symbols-outlined">handshake</span><span class="btn-supplier-label">Supplier Onboarding</span></button>
+        <a class="btn btn-gold btn-sm" href="#rfq"><span class="material-symbols-outlined">request_quote</span><span class="btn-rfq-label" data-i18n="btn_rfq">RFQ Desk</span></a>
+        <button class="btn btn-outline btn-sm" type="button" data-open="supplierDialog"><span class="material-symbols-outlined">handshake</span><span class="btn-supplier-label" data-i18n="btn_supplier">Supplier Onboarding</span></button>
         <button class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav" id="navToggle"><span class="material-symbols-outlined">menu</span></button>
       </div>
     </div>
@@ -328,20 +328,20 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <p class="hero-badge">
+        <p class="hero-badge" data-i18n-html="hero_badge">
           <span class="pill"><span class="material-symbols-outlined" style="font-size:15px">verified</span>Institutional Global Merchant Exporter</span>
           <span>Incoterms® 2020 Standard Compliant</span>
           <span class="dot"></span>
           <span>Verified Origin: <strong>Republic of India</strong></span>
         </p>
-        <h1 id="hero-title">Bridging Continents with <span class="accent">Uncompromising Integrity</span> &amp; Precision Supply Chains.</h1>
-        <p class="hero-sub">
+        <h1 id="hero-title" data-i18n-html="hero_title">Bridging Continents with <span class="accent">Uncompromising Integrity</span> &amp; Precision Supply Chains.</h1>
+        <p class="hero-sub" data-i18n-html="hero_sub">
           AmBright Global sources <strong>directly from audited mills, foundries and farm collectives</strong> across India — eliminating intermediary markups — and enforces
           <strong>independent pre-shipment inspection on every consignment</strong> before delivering on-spec cargo, on schedule, to institutional buyers in <strong>45+ countries</strong>.
         </p>
         <div class="hero-ctas">
-          <a class="btn btn-gold btn-lg" href="#rfq"><span class="material-symbols-outlined">bolt</span>Submit Trade RFQ (Instant SLA)</a>
-          <button class="btn btn-ghost-light btn-lg" type="button" data-open="inventoryDialog"><span class="material-symbols-outlined">menu_book</span>Catalogue 2025 &amp; Live Inventory <span class="chip-count">LIVE</span></button>
+          <a class="btn btn-gold btn-lg" href="#rfq"><span class="material-symbols-outlined">bolt</span><span data-i18n="hero_cta_rfq">Submit Trade RFQ (Instant SLA)</span></a>
+          <button class="btn btn-ghost-light btn-lg" type="button" data-open="inventoryDialog"><span class="material-symbols-outlined">menu_book</span><span data-i18n="hero_cta_inventory">Catalogue 2025 &amp; Live Inventory</span> <span class="chip-count">LIVE</span></button>
         </div>
         <ul class="hero-points">
           <li><span class="material-symbols-outlined">factory</span>Direct mill &amp; farm-gate sourcing</li>
@@ -377,7 +377,7 @@
     <div class="calc-wrap">
       <div class="calc-card" id="calculator">
         <div class="calc-head">
-          <h2><span class="material-symbols-outlined">calculate</span>Quick Spot Container &amp; Vessel Calculator</h2>
+          <h2 data-i18n-html="calc_head"><span class="material-symbols-outlined">calculate</span>Quick Spot Container &amp; Vessel Calculator</h2>
           <span class="live-pill"><span class="live-dot"></span>Spot rates synced · Nhava Sheva &amp; Mundra terminals</span>
         </div>
         <form class="calc-form" id="calcForm" novalidate>
@@ -435,8 +435,8 @@
   <div class="container">
     <div class="gov-card reveal">
       <div class="gov-entity">
-        <span class="eyebrow">Corporate Governance &amp; Statutory Legitimacy</span>
-        <h2 id="gov-title">AmBright Global operates under <span>Ambright Technologies India Private Limited</span></h2>
+        <span class="eyebrow" data-i18n="gov_eyebrow">Corporate Governance &amp; Statutory Legitimacy</span>
+        <h2 id="gov-title" data-i18n-html="gov_title">AmBright Global operates under <span>Ambright Technologies India Private Limited</span></h2>
         <p>All export contracts, invoices and remittances are executed by the parent legal entity — a private limited company incorporated under the Companies Act, 2013 — and governed by the Foreign Trade Policy of the DGFT and the Foreign Exchange Management Act (FEMA) regulations of the Reserve Bank of India.</p>
         <dl>
           <dt>Legal Entity</dt><dd>Ambright Technologies India Pvt Ltd</dd>
@@ -482,8 +482,8 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="eyebrow">Export Catalogue · FY 2025–26</span>
-        <h2 id="cat-title">High-Yield Commodity Verticals</h2>
+        <span class="eyebrow" data-i18n="cat_eyebrow">Export Catalogue · FY 2025–26</span>
+        <h2 id="cat-title" data-i18n="cat_title">High-Yield Commodity Verticals</h2>
         <p>Every SKU is traceable to an audited Indian origin, lab-certified against your contract specification and shipped with full statutory documentation — COO, phytosanitary, COA and EN 10204 mill certificates.</p>
       </div>
       <div class="tabs" role="tablist" aria-label="Filter by sector">
@@ -648,8 +648,8 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="eyebrow">Buyer Portal · Formal Quotation Desk</span>
-        <h2 id="rfq-title">Enterprise RFQ &amp; Formal Quotation Desk</h2>
+        <span class="eyebrow" data-i18n="rfq_eyebrow">Buyer Portal · Formal Quotation Desk</span>
+        <h2 id="rfq-title" data-i18n="rfq_title">Enterprise RFQ &amp; Formal Quotation Desk</h2>
         <p>Submit a structured requirement once. A dedicated trade officer returns a signed Proforma Invoice with firm pricing, vessel schedule and documentary terms.</p>
       </div>
       <span class="sla-badge" style="font-size:12.5px;padding:8px 14px"><span class="material-symbols-outlined" style="font-size:18px">timer</span>Guaranteed response within 4 business hours</span>
@@ -877,8 +877,8 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="eyebrow">Supply Chain · Ocean Freight Corridors</span>
-        <h2 id="corr-title">Ocean Freight Corridors &amp; Real-Time Consignment Tracking</h2>
+        <span class="eyebrow" data-i18n="corr_eyebrow">Supply Chain · Ocean Freight Corridors</span>
+        <h2 id="corr-title" data-i18n="corr_title">Ocean Freight Corridors &amp; Real-Time Consignment Tracking</h2>
         <p>Weekly fixed-day sailings from India's deep-water gateways with contracted space on Maersk, MSC, CMA CGM and Hapag-Lloyd services.</p>
       </div>
     </div>
@@ -1009,7 +1009,7 @@
   <div class="container">
     <div class="cta-card reveal">
       <div>
-        <span class="urgent"><span class="live-dot"></span>Live Trade Desk · Priority Line</span>
+        <span class="urgent" data-i18n-html="escrow_urgent"><span class="live-dot"></span>Live Trade Desk · Priority Line</span>
         <h2 id="cta-title">Need an <span>LOI issued today</span> or an escrow-secured trade settled this week?</h2>
         <p>Our senior trade officers issue Letters of Intent, Soft Corporate Offers and escrow agreements same-day for qualified institutional buyers. Funds are held by a regulated escrow agent and released only against clean BL and PSI reports.</p>
         <div class="btn-row">

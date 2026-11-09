@@ -930,3 +930,30 @@ dialog.modal[open] { animation: dlgIn .25s var(--ease); display: flex; flex-dire
   .footer-bottom { flex-direction: column; }
   .cta-card { padding: 28px 22px; }
 }
+
+/* ==========================================================================
+   Multi-Language & RTL (Arabic) Support
+   ========================================================================== */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+html[dir="rtl"] .ticker-track {
+  direction: ltr;
+}
+html[dir="rtl"] .menu {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+html[dir="rtl"] .menu button {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .primary-nav ul {
+  direction: rtl;
+}
+html[dir="rtl"] .header-actions {
+  flex-direction: row-reverse;
+}
+

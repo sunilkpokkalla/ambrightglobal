@@ -1,5 +1,34 @@
 [
   {
+    "rfqReference": "RFQ-2611-5444",
+    "receivedAt": "2026-11-09T17:34:57.321Z",
+    "corporate": {
+      "companyLegalEntity": "Rotterdam Spices BV",
+      "procurementOfficer": "Jan de Jong",
+      "designation": "Procurement Officer",
+      "corporateEmail": "procurement@rotterdamspices.nl",
+      "phone": "+31 10 123 4567",
+      "countryOfIncorporation": "Netherlands",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "Agri-Commodities & Organic Spices",
+      "specificGrade": "Malabar Black Pepper MG-1",
+      "quantity": "24 MT",
+      "packaging": "Multi-ply Paper Bags (25/50 kg)",
+      "portOfDischarge": "Port of Rotterdam",
+      "orderFrequency": "Spot / One-time",
+      "notes": ""
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "Confirmed Irrevocable LC at Sight",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-09T21:34:57.321Z"
+  },
+  {
     "rfqReference": "RFQ-2611-8868",
     "receivedAt": "2026-11-09T09:44:40.084Z",
     "corporate": {
