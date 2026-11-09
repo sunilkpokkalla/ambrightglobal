@@ -159,10 +159,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ==========================================================================
    1. Utility bar & Header
    ========================================================================== */
-.site-header { position: sticky; top: 0; z-index: 80; width: 100%; max-width: 100%; box-sizing: border-box; }
+.site-header { position: sticky; top: 0; z-index: 90; width: 100%; max-width: 100%; box-sizing: border-box; }
 
-.util-bar { background: var(--navy-950); color: var(--slate-300); font-size: 12.5px; height: var(--util-h); border-bottom: 1px solid rgba(255,255,255,.06); width: 100%; overflow: hidden; }
-.util-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-width: 0; }
+.util-bar {
+  position: relative;
+  z-index: 95;
+  background: var(--navy-950);
+  color: var(--slate-300);
+  font-size: 12.5px;
+  height: var(--util-h);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  width: 100%;
+  overflow: visible;
+}
+.util-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-width: 0; position: relative; }
 .ticker { flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
 .ticker-track { display: flex; width: max-content; animation: ticker 48s linear infinite; }
 .ticker-group { padding-right: 36px; }
@@ -186,27 +196,31 @@ ul { margin: 0; padding: 0; list-style: none; }
 .util-btn.hotline { color: var(--gold-300); font-weight: 600; }
 .util-divider { width: 1px; height: 16px; background: rgba(255,255,255,.12); margin: 0 4px; }
 
-.menu-wrap { position: relative; }
+.menu-wrap { position: relative; z-index: 100; }
 .menu {
-  position: absolute; right: 0; top: calc(100% + 8px); min-width: 240px; padding: 6px;
-  background: #fff; border: 1px solid var(--slate-200); border-radius: var(--radius); box-shadow: var(--shadow-lg);
-  color: var(--slate-700); z-index: 90;
+  position: absolute; right: 0; top: calc(100% + 5px); min-width: 250px; padding: 8px;
+  background: #fff; border: 1px solid var(--slate-200); border-radius: var(--radius);
+  box-shadow: 0 16px 36px -4px rgba(11, 25, 44, 0.28), 0 4px 12px -2px rgba(11, 25, 44, 0.12);
+  color: var(--slate-700); z-index: 120;
 }
 .menu[hidden] { display: none; }
 .menu-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-400); padding: 8px 10px 4px; }
 .menu button {
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 8px 10px; border: 0; background: none; border-radius: 6px; font-size: 13.5px; text-align: left;
+  padding: 8px 10px; border: 0; background: none; border-radius: 6px; font-size: 13px; text-align: left;
+  color: var(--slate-700);
 }
-.menu button:hover { background: var(--slate-100); }
-.menu button[aria-checked="true"] { color: var(--indigo-700); font-weight: 600; background: var(--indigo-50); }
+.menu button:hover { background: var(--slate-100); color: var(--navy-900); }
+.menu button[aria-checked="true"] { color: var(--indigo-700); font-weight: 700; background: var(--indigo-50); }
 .menu button small { color: var(--slate-400); font-size: 12px; }
 .seg { display: flex; padding: 3px; margin: 4px 6px 6px; background: var(--slate-100); border-radius: 8px; }
 .seg button { justify-content: center; padding: 6px; font-weight: 600; font-size: 12.5px; }
-.seg button[aria-checked="true"] { background: #fff; box-shadow: var(--shadow-xs); }
+.seg button[aria-checked="true"] { background: #fff; box-shadow: var(--shadow-xs); color: var(--indigo-700); }
 
 .main-header {
-  background: rgba(255,255,255,.94);
+  position: relative;
+  z-index: 85;
+  background: rgba(255,255,255,.96);
   backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--slate-200);
   transition: box-shadow .25s var(--ease);
