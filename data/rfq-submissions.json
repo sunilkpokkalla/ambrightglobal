@@ -1,5 +1,34 @@
 [
   {
+    "rfqReference": "RFQ-2611-2166",
+    "receivedAt": "2026-11-09T17:47:09.457Z",
+    "corporate": {
+      "companyLegalEntity": "Nordic Marine Foods AS",
+      "procurementOfficer": "Astrid Lindgren",
+      "designation": "Chief Procurement Officer",
+      "corporateEmail": "procurement@nordicmarine.no",
+      "phone": "+47 22 12 34 56",
+      "countryOfIncorporation": "Norway",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "Agri-Commodities & Organic Spices",
+      "specificGrade": "Salem Turmeric Fingers (Curcumin 3.8%)",
+      "quantity": "50 MT",
+      "packaging": "Multi-ply Paper Bags (25/50 kg)",
+      "portOfDischarge": "Port of Oslo (NOOSL)",
+      "orderFrequency": "Spot / One-time",
+      "notes": "Urgent seasonal shipment required before Nov 30"
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "Confirmed Irrevocable LC at Sight",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-09T21:47:09.457Z"
+  },
+  {
     "rfqReference": "RFQ-2611-5444",
     "receivedAt": "2026-11-09T17:34:57.321Z",
     "corporate": {

@@ -1,5 +1,15 @@
 [
   {
+    "supplierId": "SUP-IN491937",
+    "submittedAt": "2026-11-09T17:48:11.938Z",
+    "unitName": "Kandla Minerals & Chemicals Pvt Ltd",
+    "gstin": "24AAACK1234F1Z8",
+    "iec": "0388123456",
+    "category": "Minerals & Processed Ores",
+    "email": "quality@kandlaminerals.com",
+    "status": "Preliminary Audit Scheduled"
+  },
+  {
     "supplierId": "SUP-IN480085",
     "submittedAt": "2026-11-09T09:44:40.085Z",
     "unitName": "Gujarat Polymer Granules Ltd",
