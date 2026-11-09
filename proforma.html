@@ -3,20 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proforma Invoice — AmBright Global | Ambright Technologies India Pvt Ltd</title>
+  <title>Commercial Proforma Invoice | AmBright Global</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0" rel="stylesheet">
   <style>
-    @page { size: A4; margin: 15mm 15mm 20mm 15mm; }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: #1e293b; background: #f1f5f9; font-size: 13px; line-height: 1.45; }
-    .page-wrap { max-width: 860px; margin: 30px auto; background: #fff; padding: 48px; border: 1px solid #cbd5e1; box-shadow: 0 10px 25px -5px rgba(0,0,0,.08); border-radius: 4px; }
-    .print-bar { max-width: 860px; margin: 20px auto 0; display: flex; justify-content: space-between; align-items: center; }
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; border: 1px solid #cbd5e1; background: #fff; color: #0f172a; }
-    .btn-gold { background: #d97706; color: #fff; border-color: #b45309; }
-    .btn-gold:hover { background: #b45309; }
+    :root {
+      --navy-950: #070e17;
+      --navy-900: #0b192c;
+      --indigo-700: #4338ca;
+      --gold-500: #d97706;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50:  #f8fafc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", sans-serif; background: #e2e8f0; color: #1e293b; padding: 24px 16px; font-size: 13px; line-height: 1.5; }
+    .page-wrap { max-width: 820px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+    .print-bar { max-width: 820px; margin: 0 auto 16px; display: flex; justify-content: space-between; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; border: 1px solid #cbd5e1; background: #fff; color: #0b192c; }
+    .btn:hover { background: #f8fafc; }
+    .btn-gold { background: #f59e0b; color: #0b192c; border-color: #d97706; }
+    .btn-gold:hover { background: #d97706; color: #fff; }
     .header-row { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 24px; border-bottom: 2px solid #0b192c; }
     .company-name { font-family: "Plus Jakarta Sans", sans-serif; font-size: 22px; font-weight: 800; color: #0b192c; }
     .company-sub { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #d97706; font-weight: 700; margin-top: 2px; }
@@ -47,9 +59,9 @@
     .footer-note { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 10.5px; color: #64748b; text-align: center; }
 
     @media print {
-      body { background: #fff; }
-      .print-bar { display: none !important; }
-      .page-wrap { margin: 0; padding: 0; border: none; box-shadow: none; width: 100%; max-width: 100%; }
+      body { background: #fff; padding: 0; }
+      .print-bar { display: none; }
+      .page-wrap { box-shadow: none; padding: 20px 0; max-width: 100%; }
     }
   </style>
 </head>
@@ -87,55 +99,67 @@
     <div>
       <div class="box-title">Buyer / Consignee</div>
       <div class="info-box">
-        <strong id="buyerName">BioHerb Handels GmbH</strong><br>
-        Attn: <span id="buyerAttn">Markus Krüger (Head of Global Sourcing)</span><br>
-        <span id="buyerEmail">m.krueger@bioherb.de</span><br>
-        Destination: <span id="buyerCountry">Germany (DE)</span>
+        <strong id="buyerName">Rotterdam Spices BV</strong><br>
+        <span id="buyerAttn">Attn: Jan de Jong (Procurement Officer)</span><br>
+        <span id="buyerEmail">procurement@rotterdamspices.nl</span><br>
+        <span id="buyerCountry">Netherlands</span>
       </div>
     </div>
     <div>
-      <div class="box-title">Merchant Exporter &amp; Shipper</div>
+      <div class="box-title">Seller / Exporter</div>
       <div class="info-box">
         <strong>Ambright Technologies India Private Limited</strong><br>
-        Customs Broker: In-House CHA Lic. INNSA1/2019<br>
-        Quality Assurance: SGS / Intertek Accredited PSI<br>
-        Jurisdiction: Mumbai, Republic of India
+        Trade Division: AmBright Global<br>
+        IEC: 0512849182 | Authorized Dealer Bank: State Bank of India<br>
+        Navi Mumbai, Maharashtra 400614, India
       </div>
     </div>
   </div>
 
-  <!-- Logistics Summary -->
+  <!-- Logistics & Terms -->
   <div class="logistics-bar">
-    <div><div class="k">Port of Loading</div><div class="v" id="piPol">Nhava Sheva (INNSA)</div></div>
-    <div><div class="k">Port of Discharge</div><div class="v" id="piPod">Rotterdam (NLRTM)</div></div>
-    <div><div class="k">Incoterms® 2020</div><div class="v" id="piInco">CIF Destination</div></div>
-    <div><div class="k">Payment Terms</div><div class="v" id="piPayment">Irrevocable LC at Sight</div></div>
+    <div>
+      <div class="k">Port of Loading (POL)</div>
+      <div class="v">Nhava Sheva (INNSA)</div>
+    </div>
+    <div>
+      <div class="k">Port of Discharge (POD)</div>
+      <div class="v" id="piPod">Rotterdam (NLRTM)</div>
+    </div>
+    <div>
+      <div class="k">Delivery Terms</div>
+      <div class="v" id="piInco">CIF Rotterdam (Incoterms 2020)</div>
+    </div>
+    <div>
+      <div class="k">Payment Terms</div>
+      <div class="v" id="piPayment">Irrevocable LC at Sight</div>
+    </div>
   </div>
 
-  <!-- Commercial Item Table -->
+  <!-- Line items -->
   <table class="pi-table">
     <thead>
       <tr>
-        <th style="width:45px">Item</th>
-        <th>Commodity &amp; Technical Specification</th>
+        <th style="width:40px">#</th>
+        <th>Product Description &amp; Specifications</th>
         <th>HS Code</th>
         <th style="text-align:right">Quantity</th>
         <th style="text-align:right">Unit Price (USD)</th>
-        <th style="text-align:right">Total (USD)</th>
+        <th style="text-align:right">Total Amount (USD)</th>
       </tr>
     </thead>
-    <tbody id="piItemsBody">
+    <tbody>
       <tr>
-        <td>1</td>
+        <td>01</td>
         <td>
-          <b id="itemProduct">Salem Curcumin Turmeric Fingers (Grade A)</b><br>
-          <small style="color:#64748b" id="itemSpecs">Curcumin ≥ 3.5%, Moisture ≤ 10%, ETO-free, SGS pre-shipment tested</small><br>
-          <small style="color:#64748b" id="itemPack">Packing: 25 kg Multi-ply paper bags on shrink-wrapped pallets</small>
+          <strong id="itemProduct">Agri-Commodities &amp; Organic Spices</strong><br>
+          <span style="color:#64748b" id="itemSpecs">Malabar Black Pepper MG-1 · Density 550 g/l · Moisture &le; 11%</span><br>
+          <small style="color:#64748b" id="itemPack">Packing: Multi-ply paper bags (25 kg) on heat-treated pallets</small>
         </td>
-        <td class="mono">0910.30.20</td>
-        <td style="text-align:right" id="itemQty">54 MT</td>
-        <td style="text-align:right" id="itemRate">$1,280.00</td>
-        <td style="text-align:right;font-weight:700" id="itemSubtotal">$69,120.00</td>
+        <td class="mono">0904.11.20</td>
+        <td style="text-align:right;font-weight:600" id="itemQty">24 MT</td>
+        <td style="text-align:right;font-family:'Space Mono', monospace">$7,200.00</td>
+        <td style="text-align:right;font-family:'Space Mono', monospace;font-weight:700">$172,800.00</td>
       </tr>
     </tbody>
   </table>
@@ -143,29 +167,42 @@
   <!-- Totals -->
   <div class="totals-area">
     <div class="totals-box">
-      <div class="totals-row"><span>FOB Cargo Value</span><span id="fobVal">$64,800.00</span></div>
-      <div class="totals-row"><span>Ocean Freight (2 × 40' HC)</span><span id="freightVal">$4,120.00</span></div>
-      <div class="totals-row"><span>Marine Cargo Insurance (ICC-A 110%)</span><span id="insVal">$200.00</span></div>
-      <div class="totals-row grand"><span>Total CIF Value (USD)</span><span id="grandTotal">$69,120.00</span></div>
+      <div class="totals-row">
+        <span>FOB Cargo Value</span>
+        <span class="mono">$172,800.00</span>
+      </div>
+      <div class="totals-row">
+        <span>Ocean Freight &amp; BAF (1 &times; 40' HC)</span>
+        <span class="mono">Included (CIF)</span>
+      </div>
+      <div class="totals-row">
+        <span>Marine Cargo Insurance (Institute Cargo Clause A)</span>
+        <span class="mono">Included (CIF)</span>
+      </div>
+      <div class="totals-row grand">
+        <span>Total CIF Value (USD)</span>
+        <span class="mono">$172,800.00</span>
+      </div>
     </div>
   </div>
 
   <!-- Banking & Signature -->
   <div class="terms-grid">
     <div class="banking-box">
-      <div style="font-weight:700;color:#0b192c;margin-bottom:6px">Authorized Foreign Exchange Settlement Bank:</div>
+      <div class="box-title" style="color:#0b192c;margin-bottom:8px">Remittance &amp; Documentary LC Instructions</div>
       <strong>Beneficiary:</strong> Ambright Technologies India Private Limited<br>
-      <strong>Bank Name:</strong> State Bank of India (AD Category-I / Overseas Branch)<br>
-      <strong>SWIFT / BIC Code:</strong> SBININBB441<br>
-      <strong>Account / IBAN:</strong> 00000038491829401<br>
-      <strong>Remittance Purpose:</strong> Merchant Export Trade Receipts (FEMA Compliant)
+      <strong>Bank:</strong> State Bank of India, Commercial Branch, Mumbai<br>
+      <strong>SWIFT Code:</strong> SBININBB409<br>
+      <strong>Current Account (USD):</strong> 38947219082<br>
+      <strong>IFSC:</strong> SBIN0000300 | <strong>FEMA Compliant:</strong> AD Code 0210044
     </div>
     <div class="signature-area">
       <div class="sig-seal">
-        <span>[ DIGITALLY SIGNED ]<br><strong>AMBRIGHT TECH INDIA</strong><br>Authorized Signatory</span>
+        <span class="material-symbols-outlined" style="font-size:28px;color:#d97706">verified</span>
+        <span>DIGITALLY SEALED</span>
       </div>
-      <div style="font-weight:700;color:#0b192c">Director / Head of International Trade</div>
-      <div style="font-size:11px;color:#64748b">AmBright Global Trade Operations</div>
+      <strong style="color:#0b192c">For Ambright Technologies India Pvt Ltd</strong>
+      <span style="color:#64748b;font-size:11px">Authorized Trade Signatory · Export Desk</span>
     </div>
   </div>
 
@@ -180,25 +217,56 @@ async function loadProforma() {
   const ref = params.get("ref");
   if (!ref) return;
 
-  document.getElementById("piRef").textContent = ref;
+  const piRefEl = document.getElementById("piRef");
+  if (piRefEl) piRefEl.textContent = ref;
+
   try {
     const res = await fetch("/api/rfq/" + encodeURIComponent(ref));
     if (!res.ok) return;
     const rfq = await res.json();
     if (!rfq) return;
 
-    document.getElementById("buyerName").textContent = rfq.corporate.companyLegalEntity;
-    document.getElementById("buyerAttn").textContent = `${rfq.corporate.procurementOfficer} (${rfq.corporate.designation || "Procurement"})`;
-    document.getElementById("buyerEmail").textContent = rfq.corporate.corporateEmail;
-    document.getElementById("buyerCountry").textContent = rfq.corporate.countryOfIncorporation || "Overseas";
+    if (rfq.corporate) {
+      if (rfq.corporate.companyLegalEntity) {
+        document.getElementById("buyerName").textContent = rfq.corporate.companyLegalEntity;
+      }
+      if (rfq.corporate.procurementOfficer) {
+        document.getElementById("buyerAttn").textContent = `${rfq.corporate.procurementOfficer} (${rfq.corporate.designation || "Procurement"})`;
+      }
+      if (rfq.corporate.corporateEmail) {
+        document.getElementById("buyerEmail").textContent = rfq.corporate.corporateEmail;
+      }
+      if (rfq.corporate.countryOfIncorporation) {
+        document.getElementById("buyerCountry").textContent = rfq.corporate.countryOfIncorporation;
+      }
+    }
 
-    document.getElementById("itemProduct").textContent = rfq.orderSpecs.productCategory;
-    document.getElementById("itemSpecs").textContent = rfq.orderSpecs.specificGrade || "Certified Export Grade · Pre-shipment inspected";
-    document.getElementById("itemPack").textContent = "Packing: " + (rfq.orderSpecs.packaging || "Export Standard");
-    document.getElementById("itemQty").textContent = rfq.orderSpecs.quantity;
-    document.getElementById("piPod").textContent = rfq.orderSpecs.portOfDischarge;
-    document.getElementById("piInco").textContent = rfq.tradeFinance.incoterm + " Destination";
-    document.getElementById("piPayment").textContent = rfq.tradeFinance.paymentMethod;
+    if (rfq.orderSpecs) {
+      if (rfq.orderSpecs.productCategory) {
+        document.getElementById("itemProduct").textContent = rfq.orderSpecs.productCategory;
+      }
+      if (rfq.orderSpecs.specificGrade) {
+        document.getElementById("itemSpecs").textContent = rfq.orderSpecs.specificGrade;
+      }
+      if (rfq.orderSpecs.packaging) {
+        document.getElementById("itemPack").textContent = "Packing: " + rfq.orderSpecs.packaging;
+      }
+      if (rfq.orderSpecs.quantity) {
+        document.getElementById("itemQty").textContent = rfq.orderSpecs.quantity;
+      }
+      if (rfq.orderSpecs.portOfDischarge) {
+        document.getElementById("piPod").textContent = rfq.orderSpecs.portOfDischarge;
+      }
+    }
+
+    if (rfq.tradeFinance) {
+      if (rfq.tradeFinance.incoterm) {
+        document.getElementById("piInco").textContent = rfq.tradeFinance.incoterm + " Destination";
+      }
+      if (rfq.tradeFinance.paymentMethod) {
+        document.getElementById("piPayment").textContent = rfq.tradeFinance.paymentMethod;
+      }
+    }
   } catch (e) {
     // Keep specimen defaults
   }
@@ -208,4 +276,3 @@ loadProforma();
 
 </body>
 </html>
-
