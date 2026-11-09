@@ -401,6 +401,8 @@
       const dd = document.createElement("dd"); dd.textContent = v || "—";
       dl.append(dt, dd);
     });
+    const piBtn = $("#sucViewPi");
+    if (piBtn) piBtn.href = `/proforma?ref=${encodeURIComponent(ref)}`;
     openDialog("successDialog");
     form.reset(); files = []; renderFiles();
     try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }

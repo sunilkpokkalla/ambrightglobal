@@ -969,6 +969,8 @@
             <ul>
               <li><a href="#rfq">RFQ &amp; Quotation Desk</a></li>
               <li><a href="#tracker">BL / Container Tracking</a></li>
+              <li><a href="/proforma" target="_blank">Proforma Invoice Desk</a></li>
+              <li><a href="/admin" target="_blank">Trade Desk Operations Console</a></li>
               <li><a href="#" data-open="escrowDialog">Escrow Trade Settlement</a></li>
               <li><a href="#" data-open="accountDialog">Buyer Portal Sign-in</a></li>
               <li><a href="#" data-open="inventoryDialog">Catalogue 2025 &amp; Inventory</a></li>
@@ -1236,7 +1238,12 @@
     <div class="ref-box"><div class="k">RFQ Reference</div><div class="v" id="sucRef">RFQ-2611-0000</div></div>
     <dl class="summary-list" id="sucSummary" style="text-align:left"></dl>
   </div>
-  <div class="modal-foot" style="justify-content:flex-end"><button class="btn btn-navy btn-sm" type="button" data-close>Done</button></div>
+  <div class="modal-foot" style="justify-content:space-between">
+    <a class="btn btn-gold btn-sm" id="sucViewPi" target="_blank" href="/proforma">
+      <span class="material-symbols-outlined">receipt_long</span>Generate Instant Proforma Invoice
+    </a>
+    <button class="btn btn-navy btn-sm" type="button" data-close>Done</button>
+  </div>
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="material-symbols-outlined">info</span><span id="toastMsg"></span></div>
