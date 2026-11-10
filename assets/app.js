@@ -78,6 +78,7 @@
   function setupMenu(btnId, menuId) {
     const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
+    if (!btn || !menu) return () => {};
     const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); };
     btn.addEventListener("click", (e) => {
       e.stopPropagation();

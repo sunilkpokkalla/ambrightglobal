@@ -237,11 +237,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   min-width: 0;
 }
 
-.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
+.brand-logo-img { height: 42px; width: auto; max-width: 190px; object-fit: contain; display: block; }
 .brand-mark { width: 38px; height: 38px; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--navy-900); letter-spacing: -0.025em; white-space: nowrap; }
-.brand-name span { color: var(--gold-600); }
 .brand-sub { font-size: 9px; font-weight: 700; letter-spacing: .14em; color: var(--slate-500); margin-top: 4px; white-space: nowrap; }
 
 .primary-nav {
@@ -992,6 +992,7 @@ dialog.modal[open] { animation: dlgIn .25s var(--ease); display: flex; flex-dire
   .section { padding: 72px 0; }
   .btn-rfq-label { display: none; }
   .brand-name { font-size: 16px; }
+  .brand-logo-img { height: 34px; max-width: 150px; }
   .metric-stack { grid-template-columns: 1fr; }
   .calc-form, .form-grid, .radio-cards, .radio-cards.cols-4 { grid-template-columns: 1fr; }
   .calc-result { grid-template-columns: 1fr 1fr; }
