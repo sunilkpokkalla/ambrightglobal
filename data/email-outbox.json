@@ -23,6 +23,6 @@
     "status": "QUEUED_OUTBOX",
     "transport": "LOCAL_OUTBOX",
     "deliveryDetail": "Stored in Outbox",
-    "preview": "Dear Klaus Schneider,\n\nThank you for submitting your procurement requirement to AmBright Global (Ambright Technologies India Pvt Ltd).\n\nInquiry Reference: RFQ-2..."
+    "preview": "Dear Klaus Schneider,\n\nThank you for submitting your procurement requirement to AmBright Global (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Reference: RFQ-2..."
   }
 ]

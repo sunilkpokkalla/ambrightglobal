@@ -1,6 +1,6 @@
 # ==============================================================================
 # AmBright Global — Robots Exclusion Standard (RFC 9309)
-# Legal Entity: Ambright Technologies India Private Limited
+# Legal Entity: AmBright Tech India Consulting Private Limited
 # Division: AmBright Global (DGFT IEC: 0512849182 | FIEO Premier Member)
 # ==============================================================================
 

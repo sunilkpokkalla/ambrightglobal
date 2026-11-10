@@ -2,7 +2,7 @@
   "name": "ambright-global-trade-portal",
   "version": "1.0.0",
   "type": "module",
-  "description": "Enterprise-grade B2B International Trade and Export Portal for AmBright Global (Ambright Technologies India Private Limited)",
+  "description": "Enterprise-grade B2B International Trade and Export Portal for AmBright Global (AmBright Tech India Consulting Private Limited)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -18,7 +18,7 @@
     "consignment-tracking",
     "ambright-global"
   ],
-  "author": "Ambright Technologies India Private Limited",
+  "author": "AmBright Tech India Consulting Private Limited",
   "license": "Proprietary",
   "engines": {
     "node": ">=18.0.0"

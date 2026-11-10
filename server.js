@@ -1,6 +1,6 @@
 // ============================================================================
 // AmBright Global — Enterprise Node.js Web Server & API Backend
-// Parent Legal Entity: Ambright Technologies India Private Limited
+// Parent Legal Entity: AmBright Tech India Consulting Private Limited
 // DGFT IEC: 0512849182 | FIEO Premier Member | ISO 9001:2015
 // ============================================================================
 
@@ -329,7 +329,7 @@ function generateBuyerEmailHtml(rfq) {
   <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)">
     <div style="background:#0b192c;padding:28px 32px;border-bottom:3px solid #f59e0b">
       <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:-0.5px">AmBright <span style="color:#f59e0b">Global</span></div>
-      <div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:4px">Ambright Technologies India Private Limited · DGFT IEC: 0512849182</div>
+      <div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:4px">AmBright Tech India Consulting Private Limited · DGFT IEC: 0512849182</div>
     </div>
     <div style="padding:32px">
       <div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 12px;border-radius:6px;font-weight:700;font-size:12px">Formal Commercial Inquiry Acknowledged</div>
@@ -351,7 +351,7 @@ function generateBuyerEmailHtml(rfq) {
 
       <div style="border-top:1px solid #e2e8f0;padding-top:18px;font-size:12px;color:#64748b;line-height:1.5">
         <strong>Direct Trade Desk Hotline:</strong> +91 99664 78845 &nbsp;|&nbsp; <strong>WhatsApp:</strong> +91 99664 78845<br>
-        <strong>Email:</strong> trade@ambrightglobal.com &nbsp;|&nbsp; <strong>Regd. Office:</strong> Sector 11, CBD Belapur, Navi Mumbai, India
+        <strong>Email:</strong> trade@ambrightglobal.com &nbsp;|&nbsp; <strong>Regd. Office:</strong> Sector 11, CBD Belapur, Tirupati, India
       </div>
     </div>
   </div>
@@ -446,11 +446,13 @@ const server = http.createServer(async (req, res) => {
     return sendJson(res, 200, {
       status: "operational",
       serverTime: new Date().toISOString(),
-      entity: "Ambright Technologies India Private Limited",
+      entity: "AmBright Tech India Consulting Private Limited",
       brand: "AmBright Global",
+      cin: "U62020AP2025PTC121505",
       dgftIEC: "0512849182",
       fieoRCMC: "FIEO/RCMC/2024/7731",
       iso: "ISO 9001:2015",
+      registeredOffice: "Tirupati, Andhra Pradesh 517501, India",
       nodeVersion: process.version,
       uptimeSeconds: Math.floor(process.uptime()),
     });
@@ -630,7 +632,7 @@ const server = http.createServer(async (req, res) => {
         subject: `[AmBright Global] Formal Quotation Acknowledged: ${rfqReference} - ${company}`,
         reference: rfqReference,
         type: "BUYER_ACKNOWLEDGEMENT",
-        text: `Dear ${name},\n\nThank you for submitting your procurement requirement to AmBright Global (Ambright Technologies India Pvt Ltd).\n\nInquiry Reference: ${rfqReference}\nProduct: ${product} (${qty} ${data.qtyUnit || "MT"})\nDestination: ${pod || "Main Port"}\nIncoterm: ${incoterm || "CIF"}\n\nA trade officer has been assigned and will return a signed Proforma Invoice within our guaranteed 4-hour SLA.\n\nYou can review your preliminary Proforma details online at: http://localhost:3000/proforma?ref=${rfqReference}\n\nDirect Trade Hotline / WhatsApp: +91 99664 78845\nAmBright Global Trade Operations`,
+        text: `Dear ${name},\n\nThank you for submitting your procurement requirement to AmBright Global (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Reference: ${rfqReference}\nProduct: ${product} (${qty} ${data.qtyUnit || "MT"})\nDestination: ${pod || "Main Port"}\nIncoterm: ${incoterm || "CIF"}\n\nA trade officer has been assigned and will return a signed Proforma Invoice within our guaranteed 4-hour SLA.\n\nYou can review your preliminary Proforma details online at: http://localhost:3000/proforma?ref=${rfqReference}\n\nDirect Trade Hotline / WhatsApp: +91 99664 78845\nAmBright Global Trade Operations`,
         html: generateBuyerEmailHtml(submission),
       }).catch(console.error);
 
@@ -825,7 +827,7 @@ async function serveFile(filePath, res) {
 server.listen(PORT, HOST, () => {
   console.log("\n=================================================================");
   console.log(" AmBright Global — International Trade & Export Portal");
-  console.log(" Entity: Ambright Technologies India Private Limited (IEC 0512849182)");
+  console.log(" Entity: AmBright Tech India Consulting Private Limited (CIN: U62020AP2025PTC121505 | IEC: 0512849182)");
   console.log(` Running live on: http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/`);
   console.log(` Ready to serve HTTP & REST APIs (Node.js ${process.version})`);
   console.log("=================================================================\n");

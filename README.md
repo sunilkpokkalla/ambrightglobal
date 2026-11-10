@@ -1,6 +1,6 @@
 # AmBright Global — International B2B Trade & Export Portal
-**Merchant Export Division of Ambright Technologies India Private Limited**  
-*DGFT IEC Certified (0512849182) • FIEO Premier Member • ISO 9001:2015*  
+**Merchant Export Division of AmBright Tech India Consulting Private Limited**  
+*Corporate Identity Number (CIN): U62020AP2025PTC121505 • DGFT IEC: 0512849182 • FIEO Premier Member • ISO 9001:2015*  
 *Direct Trade Desk & WhatsApp Hotline: +91 99664 78845*
 
 ---
@@ -84,11 +84,12 @@ AmBrightGlobal/
 
 ## 📞 Corporate Entity & Compliance
 
-- **Parent Company**: Ambright Technologies India Private Limited
+- **Parent Company**: AmBright Tech India Consulting Private Limited
 - **Division**: AmBright Global (Merchant Export Division)
+- **Corporate Identity Number (CIN)**: `U62020AP2025PTC121505` (Ministry of Corporate Affairs, RoC Andhra Pradesh)
 - **DGFT IEC**: `0512849182`
 - **FIEO Premier Member**: `FIEO/RCMC/2024/7731`
 - **Quality Standard**: ISO 9001:2015 QMS
-- **Registered Office**: Sector 11, CBD Belapur, Navi Mumbai, MH 400614, India
+- **Registered Office**: Tirupati, Andhra Pradesh 517501, India
 - **Direct Phone / WhatsApp Hotline**: `+91-9966478845`
 - **Email**: `trade@ambrightglobal.com` | `escrow@ambrightglobal.com`
