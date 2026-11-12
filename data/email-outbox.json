@@ -1,5 +1,18 @@
 [
   {
+    "id": "EML-190148",
+    "timestamp": "2026-11-12T05:43:10.148Z",
+    "to": "procurement@emiratespetro.ae",
+    "from": "trade@ambrightglobal.com",
+    "subject": "[AmBright Global Traders] Formal Quotation Acknowledged: RFQ-2611-6448 - Emirates Petrochem FZE",
+    "type": "BUYER_ACKNOWLEDGEMENT",
+    "reference": "RFQ-2611-6448",
+    "status": "QUEUED_OUTBOX",
+    "transport": "LOCAL_OUTBOX",
+    "deliveryDetail": "Stored in Outbox",
+    "preview": "Dear Tariq Al-Hashemi,\n\nThank you for submitting your procurement requirement to AmBright Global Traders (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Refe..."
+  },
+  {
     "id": "EML-680627",
     "timestamp": "2026-11-10T14:08:00.627Z",
     "to": "trade@ambrightglobal.com",
@@ -38,4 +51,4 @@
     "deliveryDetail": "Stored in Outbox",
     "preview": "Dear Klaus Schneider,\n\nThank you for submitting your procurement requirement to AmBright Global (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Reference: RFQ-2..."
   }
-]
+]]
