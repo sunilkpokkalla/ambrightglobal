@@ -2,7 +2,7 @@
   "name": "ambright-global-trade-portal",
   "version": "1.0.0",
   "type": "module",
-  "description": "Enterprise-grade B2B International Trade and Export Portal for AmBright Global (AmBright Tech India Consulting Private Limited)",
+  "description": "Enterprise-grade B2B International Trade and Export Portal for AmBright Global Traders (AmBright Tech India Consulting Private Limited)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

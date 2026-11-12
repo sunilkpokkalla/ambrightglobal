@@ -238,7 +238,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
-.brand-logo-img { height: 42px; width: auto; max-width: 190px; object-fit: contain; display: block; }
+.brand-logo-img { height: 42px; width: auto; max-width: 260px; object-fit: contain; display: block; }
 .brand-mark { width: 38px; height: 38px; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--navy-900); letter-spacing: -0.025em; white-space: nowrap; }
@@ -992,7 +992,7 @@ dialog.modal[open] { animation: dlgIn .25s var(--ease); display: flex; flex-dire
   .section { padding: 72px 0; }
   .btn-rfq-label { display: none; }
   .brand-name { font-size: 16px; }
-  .brand-logo-img { height: 34px; max-width: 150px; }
+  .brand-logo-img { height: 32px; max-width: 200px; }
   .metric-stack { grid-template-columns: 1fr; }
   .calc-form, .form-grid, .radio-cards, .radio-cards.cols-4 { grid-template-columns: 1fr; }
   .calc-result { grid-template-columns: 1fr 1fr; }

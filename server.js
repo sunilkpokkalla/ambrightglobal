@@ -1,5 +1,5 @@
 // ============================================================================
-// AmBright Global — Enterprise Node.js Web Server & API Backend
+// AmBright Global Traders — Enterprise Node.js Web Server & API Backend
 // Parent Legal Entity: AmBright Tech India Consulting Private Limited
 // DGFT IEC: 0512849182 | FIEO Premier Member | ISO 9001:2015
 // ============================================================================
@@ -81,7 +81,7 @@ const SHIPMENT_RECORDS = {
     etaDays: 12,
     status: "In Transit",
     blType: "Original Negotiable Ocean Bill of Lading",
-    customsCHA: "AmBright Global In-House CHA Lic. INNSA1/2019",
+    customsCHA: "AmBright Global Traders In-House CHA Lic. INNSA1/2019",
   },
   MSKU7739120: {
     vessel: "MAERSK KOLKATA · Voy 445E",
@@ -97,7 +97,7 @@ const SHIPMENT_RECORDS = {
     etaDays: 0,
     status: "Arrived at POD",
     blType: "Express Sea Waybill (eBL)",
-    customsCHA: "AmBright Global In-House CHA Lic. INMUN1/2021",
+    customsCHA: "AmBright Global Traders In-House CHA Lic. INMUN1/2021",
   },
   CMAU4410287: {
     vessel: "CMA CGM TAGE · Voy 0FL3RW1MA",
@@ -113,7 +113,7 @@ const SHIPMENT_RECORDS = {
     etaDays: 33,
     status: "Customs Passed",
     blType: "Forwarder Cargo Receipt / Draft BL",
-    customsCHA: "AmBright Global In-House CHA Lic. INMUN1/2021",
+    customsCHA: "AmBright Global Traders In-House CHA Lic. INMUN1/2021",
   },
 };
 
@@ -240,7 +240,7 @@ async function sendSmtpRaw({ to, subject, html, text }) {
             responseBuffer = "";
             const boundary = "==_AmBright_Global_Part_==";
             const message = [
-              `From: "AmBright Global Trade Operations" <${SMTP_USER}>`,
+              `From: "AmBright Global Traders Trade Operations" <${SMTP_USER}>`,
               `To: <${to}>`,
               `Subject: ${subject}`,
               "MIME-Version: 1.0",
@@ -386,14 +386,14 @@ function generateSupplierEmailHtml(sup) {
 <html>
 <body style="font-family:'Inter',sans-serif;padding:20px;background:#f8fafc;color:#0b192c">
   <div style="max-width:600px;background:#fff;padding:24px;border-radius:8px;border:1px solid #cbd5e1">
-    <h3 style="margin-top:0;color:#1d4ed8">🏭 AmBright Global — Factory Onboarding Acknowledged</h3>
+    <h3 style="margin-top:0;color:#1d4ed8">🏭 AmBright Global Traders — Factory Onboarding Acknowledged</h3>
     <p>Dear <b>${sup.company}</b>,</p>
-    <p>We have registered your application for AmBright Global's verified mill & export manufacturing network.</p>
+    <p>We have registered your application for AmBright Global Traders' verified mill & export manufacturing network.</p>
     <p><b>Supplier Reference ID:</b> ${sup.supplierId}<br>
     <b>GSTIN:</b> ${sup.gstin}<br>
     <b>Category:</b> ${sup.category}</p>
     <p>Our technical audit and pre-shipment inspection team will review your credentials within 2 working days.</p>
-    <p>AmBright Global Compliance Desk · compliance@ambrightglobal.com</p>
+    <p>AmBright Global Traders Compliance Desk · compliance@ambrightglobal.com</p>
   </div>
 </body>
 </html>`;
@@ -447,7 +447,7 @@ const server = http.createServer(async (req, res) => {
       status: "operational",
       serverTime: new Date().toISOString(),
       entity: "AmBright Tech India Consulting Private Limited",
-      brand: "AmBright Global",
+      brand: "AmBright Global Traders",
       cin: "U62020AP2025PTC121505",
       dgftIEC: "0512849182",
       fieoRCMC: "FIEO/RCMC/2024/7731",
@@ -563,7 +563,7 @@ const server = http.createServer(async (req, res) => {
           etaDays: Math.max(0, Math.round(dest.days * (1 - progress / 100))),
           status: ["Customs Passed", "Loaded on Board", "In Transit", "Arrived at POD"][step],
           blType: "Electronic Sea Waybill (eBL)",
-          customsCHA: "AmBright Global In-House CHA Lic. INNSA1/2019",
+          customsCHA: "AmBright Global Traders In-House CHA Lic. INNSA1/2019",
         },
       });
     }
@@ -629,10 +629,10 @@ const server = http.createServer(async (req, res) => {
       // 1. Dispatch confirmation email to Buyer
       dispatchEmail({
         to: email,
-        subject: `[AmBright Global] Formal Quotation Acknowledged: ${rfqReference} - ${company}`,
+        subject: `[AmBright Global Traders] Formal Quotation Acknowledged: ${rfqReference} - ${company}`,
         reference: rfqReference,
         type: "BUYER_ACKNOWLEDGEMENT",
-        text: `Dear ${name},\n\nThank you for submitting your procurement requirement to AmBright Global (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Reference: ${rfqReference}\nProduct: ${product} (${qty} ${data.qtyUnit || "MT"})\nDestination: ${pod || "Main Port"}\nIncoterm: ${incoterm || "CIF"}\n\nA trade officer has been assigned and will return a signed Proforma Invoice within our guaranteed 4-hour SLA.\n\nYou can review your preliminary Proforma details online at: http://localhost:3000/proforma?ref=${rfqReference}\n\nDirect Trade Hotline / WhatsApp: +91 99664 78845\nAmBright Global Trade Operations`,
+        text: `Dear ${name},\n\nThank you for submitting your procurement requirement to AmBright Global Traders (AmBright Tech India Consulting Pvt Ltd).\n\nInquiry Reference: ${rfqReference}\nProduct: ${product} (${qty} ${data.qtyUnit || "MT"})\nDestination: ${pod || "Main Port"}\nIncoterm: ${incoterm || "CIF"}\n\nA trade officer has been assigned and will return a signed Proforma Invoice within our guaranteed 4-hour SLA.\n\nYou can review your preliminary Proforma details online at: http://localhost:3000/proforma?ref=${rfqReference}\n\nDirect Trade Hotline / WhatsApp: +91 99664 78845\nAmBright Global Traders Trade Operations`,
         html: generateBuyerEmailHtml(submission),
       }).catch(console.error);
 
@@ -707,10 +707,10 @@ const server = http.createServer(async (req, res) => {
       // Dispatch Supplier Onboarding Acknowledgement & Alert
       dispatchEmail({
         to: data.email,
-        subject: `[AmBright Global] Factory Onboarding Application Received: ${regId} - ${data.company}`,
+        subject: `[AmBright Global Traders] Factory Onboarding Application Received: ${regId} - ${data.company}`,
         reference: regId,
         type: "SUPPLIER_ACKNOWLEDGEMENT",
-        text: `Dear ${data.company},\n\nWe have received your factory audit application for AmBright Global's verified mill network.\nApplication ID: ${regId}\nGSTIN: ${data.gstin}\nCategory: ${data.category || "General"}\n\nOur technical compliance and vendor evaluation team will review your mill profile within 2 business days.\n\nAmBright Global Compliance Desk`,
+        text: `Dear ${data.company},\n\nWe have received your factory audit application for AmBright Global Traders' verified mill network.\nApplication ID: ${regId}\nGSTIN: ${data.gstin}\nCategory: ${data.category || "General"}\n\nOur technical compliance and vendor evaluation team will review your mill profile within 2 business days.\n\nAmBright Global Traders Compliance Desk`,
         html: generateSupplierEmailHtml(record),
       }).catch(console.error);
 
@@ -792,7 +792,7 @@ const server = http.createServer(async (req, res) => {
 
     if (!stat) {
       res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
-      res.end(`<!DOCTYPE html><html><head><title>404 Not Found — AmBright Global</title></head><body style="font-family:sans-serif;padding:40px;text-align:center"><h2>404 — Resource Not Found</h2><p>AmBright Global Institutional Trade Portal</p><p><a href="/">Return to Home</a></p></body></html>`);
+      res.end(`<!DOCTYPE html><html><head><title>404 Not Found — AmBright Global Traders</title></head><body style="font-family:sans-serif;padding:40px;text-align:center"><h2>404 — Resource Not Found</h2><p>AmBright Global Traders Institutional Trade Portal</p><p><a href="/">Return to Home</a></p></body></html>`);
       return;
     }
 
@@ -826,7 +826,7 @@ async function serveFile(filePath, res) {
 // Start Node.js HTTP server
 server.listen(PORT, HOST, () => {
   console.log("\n=================================================================");
-  console.log(" AmBright Global — International Trade & Export Portal");
+  console.log(" AmBright Global Traders — International Trade & Export Portal");
   console.log(" Entity: AmBright Tech India Consulting Private Limited (CIN: U62020AP2025PTC121505 | IEC: 0512849182)");
   console.log(` Running live on: http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/`);
   console.log(` Ready to serve HTTP & REST APIs (Node.js ${process.version})`);
@@ -835,7 +835,7 @@ server.listen(PORT, HOST, () => {
 
 // Graceful termination
 process.on("SIGINT", () => {
-  console.log("\nGracefully shutting down AmBright Global Portal...");
+  console.log("\nGracefully shutting down AmBright Global Traders Portal...");
   server.close(() => {
     console.log("Server closed.");
     process.exit(0);

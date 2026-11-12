@@ -1,4 +1,4 @@
-# AmBright Global — International B2B Trade & Export Portal
+# AmBright Global Traders — International B2B Trade & Export Portal
 **Merchant Export Division of AmBright Tech India Consulting Private Limited**  
 *Corporate Identity Number (CIN): U62020AP2025PTC121505 • DGFT IEC: 0512849182 • FIEO Premier Member • ISO 9001:2015*  
 *Direct Trade Desk & WhatsApp Hotline: +91 99664 78845*
@@ -85,7 +85,7 @@ AmBrightGlobal/
 ## 📞 Corporate Entity & Compliance
 
 - **Parent Company**: AmBright Tech India Consulting Private Limited
-- **Division**: AmBright Global (Merchant Export Division)
+- **Division**: AmBright Global Traders (Merchant Export Division)
 - **Corporate Identity Number (CIN)**: `U62020AP2025PTC121505` (Ministry of Corporate Affairs, RoC Andhra Pradesh)
 - **DGFT IEC**: `0512849182`
 - **FIEO Premier Member**: `FIEO/RCMC/2024/7731`

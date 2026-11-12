@@ -1,5 +1,18 @@
 [
   {
+    "id": "EML-680627",
+    "timestamp": "2026-11-10T14:08:00.627Z",
+    "to": "trade@ambrightglobal.com",
+    "from": "trade@ambrightglobal.com",
+    "subject": "🔥 [NEW RFQ ALERT] RFQ-2611-5772 - Nordic Grain & Food AB (28 MT Agro-Commodities & Organic Spices)",
+    "type": "TRADE_DESK_ALERT",
+    "reference": "RFQ-2611-5772",
+    "status": "QUEUED_OUTBOX",
+    "transport": "LOCAL_OUTBOX",
+    "deliveryDetail": "Stored in Outbox",
+    "preview": "NEW COMMERCIAL RFQ RECEIVED:\n\nReference: RFQ-2611-5772\nCompany: Nordic Grain & Food AB\nContact: Astrid Lindqvist (procurement@nordicgrain.se, +46 8 123 4567)\nCo..."
+  },
+  {
     "id": "EML-210735",
     "timestamp": "2026-11-09T18:00:10.735Z",
     "to": "trade@ambrightglobal.com",
