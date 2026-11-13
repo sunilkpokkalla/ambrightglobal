@@ -1367,7 +1367,7 @@ html[dir="rtl"] .header-actions {
 .rfq-subpage-cta {
   background: linear-gradient(135deg, var(--navy-900) 0%, #1E3A8A 100%);
   border-radius: var(--radius-xl);
-  padding: 48px 40px;
+  padding: 42px 40px;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -1377,11 +1377,16 @@ html[dir="rtl"] .header-actions {
   box-shadow: var(--shadow-lg);
   flex-wrap: wrap;
 }
+.rfq-subpage-cta > div:first-child {
+  flex: 1 1 480px;
+  min-width: 280px;
+}
 .rfq-subpage-cta h3 {
   font-size: 26px;
   font-weight: 800;
   margin: 0 0 10px;
   color: #fff;
+  letter-spacing: -0.02em;
 }
 .rfq-subpage-cta p {
   color: var(--slate-300);
@@ -1394,6 +1399,38 @@ html[dir="rtl"] .header-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+.rfq-cta-actions .btn {
+  height: 46px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.rfq-cta-actions .btn-ghost-light,
+.rfq-cta-actions .btn-outline {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.rfq-cta-actions .btn-ghost-light:hover,
+.rfq-cta-actions .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+.rfq-cta-actions .btn-ghost-light .material-symbols-outlined,
+.rfq-cta-actions .btn-outline .material-symbols-outlined {
+  font-size: 20px;
 }
 
 /* Floating WhatsApp Desk */

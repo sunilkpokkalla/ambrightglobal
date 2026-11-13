@@ -52,16 +52,22 @@
   const nav = $("#primaryNav");
   const navToggle = $("#navToggle");
   function closeNav() {
-    nav.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.querySelector(".material-symbols-outlined").textContent = "menu";
+    if (nav) nav.classList.remove("open");
+    if (navToggle) {
+      navToggle.setAttribute("aria-expanded", "false");
+      const icon = navToggle.querySelector(".material-symbols-outlined");
+      if (icon) icon.textContent = "menu";
+    }
   }
-  navToggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(open));
-    navToggle.querySelector(".material-symbols-outlined").textContent = open ? "close" : "menu";
-  });
-  $$("a", nav).forEach((a) => a.addEventListener("click", closeNav));
+  if (nav && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(open));
+      const icon = navToggle.querySelector(".material-symbols-outlined");
+      if (icon) icon.textContent = open ? "close" : "menu";
+    });
+    $$("a", nav).forEach((a) => a.addEventListener("click", closeNav));
+  }
 
   // Active section highlight
   const navLinks = $$('a[href^="#"]', nav).filter((a) => !a.dataset.open);
@@ -326,8 +332,8 @@
       el.textContent = fmt(base, parseInt(el.dataset.decimals || "0", 10));
     });
     $$("[data-basis-label]").forEach((el) => (el.textContent = state.basis === "CIF" ? "Indicative CIF" : "Indicative FOB"));
-    $("#currencyLabel").textContent = `${symbols[state.currency].trim()} ${state.currency} · ${state.basis}`;
-    $("#priceBasisNote").textContent = `${state.currency} · ${state.basis === "CIF" ? "CIF main destination ports" : "FOB India"}`;
+    const cLbl = $("#currencyLabel"); if (cLbl) cLbl.textContent = `${symbols[state.currency].trim()} ${state.currency} · ${state.basis}`;
+    const pbNote = $("#priceBasisNote"); if (pbNote) pbNote.textContent = `${state.currency} · ${state.basis === "CIF" ? "CIF main destination ports" : "FOB India"}`;
     if (lastCalc) renderCalc(lastCalc);
   }
   $$("#currencyMenu [data-currency]").forEach((b) =>
@@ -394,7 +400,8 @@
     return now;
   }
 
-  $("#calcForm").addEventListener("submit", (e) => {
+  const calcFormEl = $("#calcForm");
+  if (calcFormEl) calcFormEl.addEventListener("submit", (e) => {
     e.preventDefault();
     const f = e.currentTarget;
     const pod = PODS[f.pod.value], vol = VOLS[f.volume.value];
@@ -460,6 +467,7 @@
 
   /* ------------------------------------------------------------ RFQ form */
   const form = $("#rfqForm");
+  if (form) {
   const steps = $$(".rfq-step", form);
   const stepBtns = $$(".step-btn");
   const btnNext = $("#rfqNext"), btnBack = $("#rfqBack"), btnSubmit = $("#rfqSubmit");
@@ -615,6 +623,7 @@
     btnSubmit.innerHTML = '<span class="material-symbols-outlined">verified</span>Generate Official Quote Request';
   });
   goTo(0);
+  } // end if (form)
 
   // Supplier & Account form dialogs with backend persistence
   const supForm = document.getElementById("supplierForm");
@@ -725,7 +734,9 @@
   }
   const el = (tag, attrs = {}) => { const n = document.createElementNS(NS, tag); Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v)); return n; };
 
-  const gGrid = $("#mapGrid"), gLand = $("#mapLand"), gRoutes = $("#mapRoutes"), gPorts = $("#mapPorts"), ship = $("#mapShip");
+  const gGrid = $("#mapGrid");
+  if (gGrid) {
+  const gLand = $("#mapLand"), gRoutes = $("#mapRoutes"), gPorts = $("#mapPorts"), ship = $("#mapShip");
   for (let lon = -150; lon <= 180; lon += 30) { const [x] = P([lon, 0]); gGrid.appendChild(el("line", { x1: x, y1: 0, x2: x, y2: H })); }
   for (let lat = -60; lat <= 75; lat += 15) { const [, y] = P([0, lat]); gGrid.appendChild(el("line", { x1: 0, y1: y, x2: W, y2: y })); }
   LAND.forEach((poly) => gLand.appendChild(el("path", { class: "land", d: "M" + poly.map(P).map((q) => q.map((n) => n.toFixed(1)).join(",")).join("L") + "Z" })));
@@ -782,11 +793,15 @@
   selectRoute("jebel");
 
   // Pause the ship animation when the map is off-screen
-  new IntersectionObserver(([en]) => {
-    if (reduceMotion) return;
-    if (en.isIntersecting) { cancelAnimationFrame(shipRAF); shipRAF = requestAnimationFrame(animateShip); }
-    else cancelAnimationFrame(shipRAF);
-  }).observe($("#routeMap"));
+  const rMap = $("#routeMap");
+  if (rMap) {
+    new IntersectionObserver(([en]) => {
+      if (reduceMotion) return;
+      if (en.isIntersecting) { cancelAnimationFrame(shipRAF); shipRAF = requestAnimationFrame(animateShip); }
+      else cancelAnimationFrame(shipRAF);
+    }).observe(rMap);
+  }
+  } // end if (gGrid)
 
   /* ------------------------------------------------------- BL tracker */
   const addDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }); };

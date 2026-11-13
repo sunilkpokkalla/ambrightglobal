@@ -346,7 +346,7 @@ function generateBuyerEmailHtml(rfq) {
 <body style="margin:0;padding:24px;background:#f1f5f9;font-family:'Inter',system-ui,sans-serif;color:#1e293b">
   <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)">
     <div style="background:#0b192c;padding:28px 32px;border-bottom:3px solid #f59e0b">
-      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:-0.5px">AmBright <span style="color:#f59e0b">Global</span></div>
+      <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:-0.5px">AmBright Global Traders</div>
       <div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:4px">AmBright Tech India Consulting Private Limited · DGFT IEC: 0512849182</div>
     </div>
     <div style="padding:32px">
