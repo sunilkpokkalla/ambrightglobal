@@ -1138,9 +1138,36 @@ dialog.modal[open] { animation: dlgIn .25s var(--ease); display: flex; flex-dire
   .footer-cols, .reg-strip { grid-template-columns: 1fr 1fr; gap: 20px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
   .cta-card { padding: 28px 22px; }
+
+  /* Subpage Mobile Refinements */
+  .subpage-hero { padding: 40px 0 32px; }
+  .subpage-title { font-size: clamp(24px, 5.5vw, 32px); line-height: 1.22; margin-bottom: 12px; }
+  .subpage-lead { font-size: 15px; margin-bottom: 20px; line-height: 1.55; }
+  .subpage-meta-strip { gap: 12px; padding-top: 14px; }
+  .subpage-meta-item { font-size: 12.5px; }
+
+  .content-section { padding: 36px 0; }
+  .content-section h2 { font-size: 20px !important; margin-bottom: 10px !important; }
+  .content-section h3 { font-size: 17px !important; margin-top: 28px !important; margin-bottom: 10px !important; }
+
+  .spec-table-wrap { margin: 18px 0 28px; border-radius: var(--radius); }
+  table.spec-table th { padding: 10px 12px; font-size: 12px; }
+  table.spec-table td { padding: 10px 12px; font-size: 12px; }
+
+  .faq-card summary { padding: 14px 16px; font-size: 14px; }
+  .faq-body { padding: 0 16px 16px; font-size: 13.5px; line-height: 1.6; }
+
+  .rfq-subpage-cta { padding: 26px 20px; border-radius: var(--radius-lg); margin: 32px 0 16px; gap: 20px; }
+  .rfq-subpage-cta h3 { font-size: 20px; }
+  .rfq-subpage-cta p { font-size: 13.5px; }
+  .rfq-cta-actions { width: 100%; flex-direction: column; gap: 10px; }
+  .rfq-cta-actions .btn { width: 100%; justify-content: center; height: 44px; }
 }
 
 @media (max-width: 520px) {
+  .subpage-hero { padding: 32px 0 24px; }
+  .subpage-badge { font-size: 11px; padding: 3px 10px; margin-bottom: 12px; }
+  .breadcrumbs { font-size: 12px; margin-bottom: 14px; }
   .footer-cols { grid-template-columns: 1fr; gap: 18px; }
   .reg-strip { grid-template-columns: 1fr; }
 }
