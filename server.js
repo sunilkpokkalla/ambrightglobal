@@ -1,7 +1,7 @@
 // ============================================================================
 // AmBright Global Traders — Enterprise Node.js Web Server & API Backend
 // Parent Legal Entity: AmBright Tech India Consulting Private Limited
-// DGFT IEC: 0512849182 | FIEO Premier Member | ISO 9001:2015
+// DGFT IEC: ABDCA8807A | FIEO Premier Member | ISO 9001:2015
 // ============================================================================
 
 import http from "node:http";
@@ -347,7 +347,7 @@ function generateBuyerEmailHtml(rfq) {
   <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05)">
     <div style="background:#0b192c;padding:28px 32px;border-bottom:3px solid #f59e0b">
       <div style="color:#ffffff;font-size:22px;font-weight:800;letter-spacing:-0.5px">AmBright Global Traders</div>
-      <div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:4px">AmBright Tech India Consulting Private Limited · DGFT IEC: 0512849182</div>
+      <div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-top:4px">AmBright Tech India Consulting Private Limited · DGFT IEC: ABDCA8807A</div>
     </div>
     <div style="padding:32px">
       <div style="display:inline-block;background:#fef3c7;color:#92400e;padding:6px 12px;border-radius:6px;font-weight:700;font-size:12px">Formal Commercial Inquiry Acknowledged</div>
@@ -467,7 +467,7 @@ const server = http.createServer(async (req, res) => {
       entity: "AmBright Tech India Consulting Private Limited",
       brand: "AmBright Global Traders",
       cin: "U62020AP2025PTC121505",
-      dgftIEC: "0512849182",
+      dgftIEC: "ABDCA8807A",
       fieoRCMC: "FIEO/RCMC/2024/7731",
       iso: "ISO 9001:2015",
       registeredOffice: "Tirupati, Andhra Pradesh 517501, India",
@@ -845,7 +845,7 @@ async function serveFile(filePath, res) {
 server.listen(PORT, HOST, () => {
   console.log("\n=================================================================");
   console.log(" AmBright Global Traders — International Trade & Export Portal");
-  console.log(" Entity: AmBright Tech India Consulting Private Limited (CIN: U62020AP2025PTC121505 | IEC: 0512849182)");
+  console.log(" Entity: AmBright Tech India Consulting Private Limited (CIN: U62020AP2025PTC121505 | IEC: ABDCA8807A)");
   console.log(` Running live on: http://${HOST === "0.0.0.0" ? "localhost" : HOST}:${PORT}/`);
   console.log(` Ready to serve HTTP & REST APIs (Node.js ${process.version})`);
   console.log("=================================================================\n");
