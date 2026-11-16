@@ -276,13 +276,103 @@
         <img src="/assets/logo.png" alt="AmBright Global Traders" class="brand-logo-img" width="180" height="44">
       </a>
 
-      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary site navigation">
         <ul>
-          <li><a href="/products/agro-commodities.html">Agro &amp; Spices</a></li>
-          <li><a href="/products/specialty-polymers.html">Polymers</a></li>
-          <li><a href="/products/engineering-hardware.html">Engineering</a></li>
-          <li><a href="/products/minerals-industrial.html">Minerals</a></li>
-          <li><a href="/trade-guides/incoterms-2020.html">Incoterms</a></li>
+          <li class="nav-item-dropdown">
+            <a href="#products" class="nav-dropdown-trigger"><span data-i18n="nav_products">Products</span> <span class="material-symbols-outlined">expand_more</span></a>
+            <div class="nav-dropdown-menu">
+              <a href="/products/agro-commodities.html">
+                <span class="material-symbols-outlined item-icon">spa</span>
+                <div>
+                  <span class="item-title">Agro Commodities &amp; Spices</span>
+                  <span class="item-desc">Malabar pepper, Salem turmeric, 1121 basmati rice</span>
+                </div>
+              </a>
+              <a href="/products/specialty-polymers.html">
+                <span class="material-symbols-outlined item-icon">science</span>
+                <div>
+                  <span class="item-title">Specialty Polymers &amp; Resins</span>
+                  <span class="item-desc">Virgin HDPE, LLDPE, PP copolymer, bio-succinic acid</span>
+                </div>
+              </a>
+              <a href="/products/engineering-hardware.html">
+                <span class="material-symbols-outlined item-icon">precision_manufacturing</span>
+                <div>
+                  <span class="item-title">Engineering Goods &amp; Hardware</span>
+                  <span class="item-desc">ASTM fasteners, DI gate valves, scaffolding fittings</span>
+                </div>
+              </a>
+              <a href="/products/minerals-industrial.html">
+                <span class="material-symbols-outlined item-icon">landscape</span>
+                <div>
+                  <span class="item-title">Industrial Minerals &amp; Bentonite</span>
+                  <span class="item-desc">API 13A drilling bentonite, 99.5% silica quartz</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item-dropdown">
+            <a href="#supply-chain" class="nav-dropdown-trigger">Global Corridors <span class="material-symbols-outlined">expand_more</span></a>
+            <div class="nav-dropdown-menu">
+              <a href="/destinations/middle-east-uae.html">
+                <span class="material-symbols-outlined item-icon">near_me</span>
+                <div>
+                  <span class="item-title">Middle East &amp; UAE (Jebel Ali)</span>
+                  <span class="item-desc">3–5 days direct sea transit, SABER certified</span>
+                </div>
+              </a>
+              <a href="/destinations/europe-eu.html">
+                <span class="material-symbols-outlined item-icon">euro</span>
+                <div>
+                  <span class="item-title">Europe (Rotterdam / Antwerp)</span>
+                  <span class="item-desc">REACH compliant, EU pesticide MRL certified</span>
+                </div>
+              </a>
+              <a href="/destinations/americas-usa.html">
+                <span class="material-symbols-outlined item-icon">flag</span>
+                <div>
+                  <span class="item-title">Americas (Houston / New York)</span>
+                  <span class="item-desc">US FDA registered, automated ISF 10+2</span>
+                </div>
+              </a>
+              <a href="/destinations/southeast-asia.html">
+                <span class="material-symbols-outlined item-icon">public</span>
+                <div>
+                  <span class="item-title">Southeast Asia (Singapore / ASEAN)</span>
+                  <span class="item-desc">AIFTA Form A-I preferential duty-free</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item-dropdown">
+            <a href="/trade-guides/incoterms-2020.html" class="nav-dropdown-trigger">Trade Guides <span class="material-symbols-outlined">expand_more</span></a>
+            <div class="nav-dropdown-menu">
+              <a href="/trade-guides/incoterms-2020.html">
+                <span class="material-symbols-outlined item-icon">menu_book</span>
+                <div>
+                  <span class="item-title">Incoterms® 2020 Exporter Guide</span>
+                  <span class="item-desc">FOB vs CIF vs CFR risk &amp; insurance matrix</span>
+                </div>
+              </a>
+              <a href="/trade-guides/letter-of-credit-trade-finance.html">
+                <span class="material-symbols-outlined item-icon">account_balance</span>
+                <div>
+                  <span class="item-title">Letter of Credit &amp; Escrow Security</span>
+                  <span class="item-desc">UCP 600 documentary credit &amp; fraud prevention</span>
+                </div>
+              </a>
+              <a href="/trade-guides/how-to-import-from-india.html">
+                <span class="material-symbols-outlined item-icon">checklist</span>
+                <div>
+                  <span class="item-title">How to Import from India</span>
+                  <span class="item-desc">5-phase international buyer procurement guide</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
@@ -426,7 +516,7 @@
      ===================================================================== -->
 <section class="governance" id="compliance" aria-labelledby="gov-title">
   <div class="container">
-    <div class="gov-card reveal">
+    <div class="gov-card">
       <div class="gov-entity">
         <span class="eyebrow" data-i18n="gov_eyebrow">Corporate Governance &amp; Statutory Legitimacy</span>
         <h2 id="gov-title" data-i18n-html="gov_title">AmBright Global Traders operates under <span>AmBright Tech India Consulting Private Limited</span></h2>
@@ -468,6 +558,10 @@
           <span class="cred-icon gold"><span class="material-symbols-outlined">biotech</span></span>
           <div><h3>SGS / Intertek</h3><span class="code">Testing Partner · PSI</span><span class="verified"><span class="material-symbols-outlined ms-fill">check_circle</span>Accredited Labs</span></div>
         </div>
+        <div class="cred">
+          <span class="cred-icon"><span class="material-symbols-outlined">account_balance</span></span>
+          <div><h3>RBI (FEMA) &amp; AD-I Bank</h3><span class="code">SWIFT MT700 · EDPMS</span><span class="verified"><span class="material-symbols-outlined ms-fill">check_circle</span>Trade Finance Enabled</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -496,7 +590,7 @@
       <!-- 1. Agri -->
       <article class="product-card" data-cat="agri">
         <div class="pc-media">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuhcNYRqDeKc1cM3WAbRWvvMWyEilbWom_UmBww5pA1-AiFx53ExNpV1Yd22dpNzktwMuZjf2fCzUXKmZkyGkR4hCnBO2sGwfkJ5u43i5MSF6KkC_nFmsYrq0pQQTpHyGkGB15lPOcY5mIilbN-Vqqud_QNBMQLOEQQB7qKzWahiqZtpKjHUDa1FsrRmzTIvYgObPynwKE6W1L1BxB2a30pNQF1eiQwYeGiwkg7Xc" alt="Export-grade whole black peppercorns, turmeric fingers and green cardamom pods" width="640" height="400" loading="lazy" decoding="async">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuhcNYRqDeKc1cM3WAbRWvvMWyEilbWom_UmBww5pA1-AiFx53ExNpV1Yd22dpNzktwMuZjf2fCzUXKmZkyGkR4hCnBO2sGwfkJ5u43i5MSF6KkC_nFmsYrq0pQQTpHyGkGB15lPOcY5mIilbN-Vqqud_QNBMQLOEQQB7qKzWahiqZtpKjHUDa1FsrRmzTIvYgObPynwKE6W1L1BxB2a30pNQF1eiQwYeGiwkg7Xc" alt="Export-grade whole black peppercorns, turmeric fingers and green cardamom pods" width="640" height="400" decoding="async">
           <div class="pc-tags"><span class="tag"><span class="material-symbols-outlined">anchor</span>POL: Kochi / Nhava Sheva</span><span class="tag tag-gold">APEDA · FSSAI</span></div>
           <span class="pc-sector">Agri &amp; Spices</span>
         </div>
@@ -520,7 +614,7 @@
       <!-- 2. Engineering -->
       <article class="product-card" data-cat="eng">
         <div class="pc-media">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1NuhZIwvcKGt6q5IQIx7NQzln1JCtByMcXHf2Az-iyq27nvF4tSpAhtgbSaedF7--V_8tIJMHhu-nM86HU-zYGnguh3qZZL1kN4vvQtIWiGOCvCXKyirOdGi0o5fewmqScvupRBkqLt914OxCBa3062rPbQlOz5r2VwByrhrH75r2cDymcGpIxlDO2p_1lxkgFr2KgS64oVoIX4XI7m5Hfwqp9VJPsdZG6luYKFY" alt="CNC-machined components and ductile iron cast valves in an inspection bay" width="640" height="400" loading="lazy" decoding="async">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1NuhZIwvcKGt6q5IQIx7NQzln1JCtByMcXHf2Az-iyq27nvF4tSpAhtgbSaedF7--V_8tIJMHhu-nM86HU-zYGnguh3qZZL1kN4vvQtIWiGOCvCXKyirOdGi0o5fewmqScvupRBkqLt914OxCBa3062rPbQlOz5r2VwByrhrH75r2cDymcGpIxlDO2p_1lxkgFr2KgS64oVoIX4XI7m5Hfwqp9VJPsdZG6luYKFY" alt="CNC-machined components and ductile iron cast valves in an inspection bay" width="640" height="400" decoding="async">
           <div class="pc-tags"><span class="tag"><span class="material-symbols-outlined">anchor</span>POL: Mundra / Nhava Sheva</span><span class="tag tag-gold">EN 10204 3.1</span></div>
           <span class="pc-sector">Precision Engineering</span>
         </div>
@@ -544,7 +638,7 @@
       <!-- 3. Minerals -->
       <article class="product-card" data-cat="min">
         <div class="pc-media">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHx0aakdFZdCX4oJoQVvysM8bLOgJ934JIUfKJnWC3-kPTGNEXtMHW7icZtwMh7j3zniNRhMiroCNU4TJFSnBsA7IR9-4sh2EBhSr9XHckwzrZKmJDuVTdaLbWa2ARMqaz-0XTSqfMVMDCSRvLNbWrsuUFMhE_jAZADHhR1y06WrzxHQVRvoOovCWJVttOzkZS4W-NFbS5D0O217BuC8D9_sexSJ5IT16rvEMeNLI" alt="High-purity quartz grains, bentonite granules and kaolin on dark stone" width="640" height="400" loading="lazy" decoding="async">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHx0aakdFZdCX4oJoQVvysM8bLOgJ934JIUfKJnWC3-kPTGNEXtMHW7icZtwMh7j3zniNRhMiroCNU4TJFSnBsA7IR9-4sh2EBhSr9XHckwzrZKmJDuVTdaLbWa2ARMqaz-0XTSqfMVMDCSRvLNbWrsuUFMhE_jAZADHhR1y06WrzxHQVRvoOovCWJVttOzkZS4W-NFbS5D0O217BuC8D9_sexSJ5IT16rvEMeNLI" alt="High-purity quartz grains, bentonite granules and kaolin on dark stone" width="640" height="400" decoding="async">
           <div class="pc-tags"><span class="tag"><span class="material-symbols-outlined">anchor</span>POL: Mundra / Kandla</span><span class="tag tag-gold">API 13A</span></div>
           <span class="pc-sector">Minerals &amp; Ores</span>
         </div>
@@ -568,7 +662,7 @@
       <!-- 4. Jute -->
       <article class="product-card" data-cat="agri">
         <div class="pc-media">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj1cfOGqgHiiUKoNjC4DSA7joYjlKds4eRPMc8TpIlLKNhhgsvG09OpPfzOscRLBPsqHMH5JHzxbIlcKF0DY2deNgK52ygqc7p2brjEuSjOwnX5HG67S20ZZLDwZOOZJNpQIkq_t4rWCGqT-TGAalFYBn_jO1oAH6Huy-EhJSfCfwgLCcPhV90EUg36f_hAe17uP7JfU6KG2N1buzX_Tai3OhijwXVS_hOxZC9BF8" alt="Woven jute geotextile rolls beside organic cotton yarn cones" width="640" height="400" loading="lazy" decoding="async">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj1cfOGqgHiiUKoNjC4DSA7joYjlKds4eRPMc8TpIlLKNhhgsvG09OpPfzOscRLBPsqHMH5JHzxbIlcKF0DY2deNgK52ygqc7p2brjEuSjOwnX5HG67S20ZZLDwZOOZJNpQIkq_t4rWCGqT-TGAalFYBn_jO1oAH6Huy-EhJSfCfwgLCcPhV90EUg36f_hAe17uP7JfU6KG2N1buzX_Tai3OhijwXVS_hOxZC9BF8" alt="Woven jute geotextile rolls beside organic cotton yarn cones" width="640" height="400" decoding="async">
           <div class="pc-tags"><span class="tag"><span class="material-symbols-outlined">anchor</span>POL: Kolkata / Haldia</span><span class="tag tag-gold">GOTS · ASTM</span></div>
           <span class="pc-sector">Natural Fibres</span>
         </div>
@@ -592,7 +686,7 @@
       <!-- 5. Polymers -->
       <article class="product-card" data-cat="eng">
         <div class="pc-media">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi1Ixa-4lGOcrA-VtvlVac95tU6LbnnYN6w8tXFr5paiyrgkXWYqM1ELXAY11pen8drQShSl_e7kidTalQR5ANYlXyYz06t-yQDBKhVHhrf6XKSw7N1Y5TqC0ERHUzBJTcUsWOnZCE6CbHc4a9THtLQTrwA3NsYsIgsOLC3kTg0-d1lRN-jyV_-3Wv0lYEpHqHLcehBr8OmlcECArieRBQwafTfwtK1Hg8p_3bZWk" alt="Virgin HDPE polymer pellets and sealed drums of specialty chemicals" width="640" height="400" loading="lazy" decoding="async">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi1Ixa-4lGOcrA-VtvlVac95tU6LbnnYN6w8tXFr5paiyrgkXWYqM1ELXAY11pen8drQShSl_e7kidTalQR5ANYlXyYz06t-yQDBKhVHhrf6XKSw7N1Y5TqC0ERHUzBJTcUsWOnZCE6CbHc4a9THtLQTrwA3NsYsIgsOLC3kTg0-d1lRN-jyV_-3Wv0lYEpHqHLcehBr8OmlcECArieRBQwafTfwtK1Hg8p_3bZWk" alt="Virgin HDPE polymer pellets and sealed drums of specialty chemicals" width="640" height="400" decoding="async">
           <div class="pc-tags"><span class="tag"><span class="material-symbols-outlined">anchor</span>POL: Hazira / Nhava Sheva</span><span class="tag tag-gold">REACH · RoHS</span></div>
           <span class="pc-sector">Polymers &amp; Chemicals</span>
         </div>
@@ -633,7 +727,7 @@
     </div>
 
     <div class="catalogue-foot">
-      <span style="display:flex;gap:10px;align-items:center"><span class="material-symbols-outlined">info</span>Indicative prices shown in <b id="priceBasisNote">USD · FOB India</b>. Firm offers are issued against a formal RFQ, valid 72 hours, subject to market and vessel availability.</span>
+      <span style="display:flex;gap:10px;align-items:center"><span class="material-symbols-outlined">info</span><span>Indicative prices shown in <b id="priceBasisNote">USD · FOB India</b>. Firm offers are issued against a formal RFQ, valid 72 hours, subject to market and vessel availability.</span></span>
       <button class="btn btn-outline btn-sm" type="button" data-open="inventoryDialog"><span class="material-symbols-outlined">inventory_2</span>View Live Inventory</button>
     </div>
   </div>
@@ -1362,6 +1456,13 @@
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="material-symbols-outlined">info</span><span id="toastMsg"></span></div>
+
+<!-- Floating WhatsApp Quick Connect -->
+<a href="https://wa.me/919966478845?text=Hello%20AmBright%20Global%20Traders%2C%20I%20would%20like%20to%20inquire%20about%20a%20commercial%20quotation." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Trade Desk">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.33C9.33 7.33 9 7.41 8.84 7.58C8.5 7.95 7.6 8.78 7.6 10.47C7.6 12.16 8.83 13.8 9 14.03C9.17 14.25 11.45 17.75 14.94 19.26C15.77 19.62 16.42 19.83 16.92 20C17.76 20.26 18.52 20.22 19.13 20.13C19.81 20.03 21.22 19.28 21.51 18.45C21.81 17.62 21.81 16.91 21.72 16.76C21.63 16.61 21.43 16.53 21.1 16.36C20.77 16.2 19.16 15.41 18.86 15.3C18.56 15.19 18.34 15.14 18.12 15.47C17.9 15.8 17.27 16.53 17.08 16.76C16.89 16.98 16.7 17.01 16.37 16.85C16.04 16.68 14.98 16.33 13.73 15.22C12.75 14.35 12.09 13.27 11.9 12.94C11.71 12.61 11.88 12.44 12.05 12.27C12.2 12.12 12.38 11.89 12.55 11.69C12.72 11.49 12.77 11.35 12.88 11.13C13 10.91 12.94 10.72 12.86 10.55C12.78 10.39 12.13 8.78 11.86 8.12C11.59 7.49 11.32 7.57 11.11 7.56C10.92 7.55 10.7 7.55 10.48 7.55C10.26 7.55 9.9 7.63 9.68 7.88"/></svg>
+  <span class="wa-online-dot"></span>
+  <span class="wa-label">WhatsApp Trade Desk</span>
+</a>
 
 <script src="assets/app.js" defer></script>
 </body>

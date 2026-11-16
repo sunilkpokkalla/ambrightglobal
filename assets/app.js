@@ -360,10 +360,12 @@
       if (!en.isIntersecting) return;
       countObs.unobserve(en.target);
       const el = en.target, end = +el.dataset.count;
-      if (reduceMotion) return;
-      const t0 = performance.now(), dur = 1400;
+      if (reduceMotion) { el.textContent = end; return; }
+      let t0 = null;
+      const dur = 1400;
       const step = (t) => {
-        const p = Math.min(1, (t - t0) / dur);
+        if (t0 === null) t0 = t;
+        const p = Math.max(0, Math.min(1, (t - t0) / dur));
         el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
         if (p < 1) requestAnimationFrame(step);
       };
@@ -901,7 +903,7 @@
   /* ------------------------------------------------------- Reveal */
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); revealObs.unobserve(en.target); } });
-  }, { rootMargin: "0px 0px -8% 0px" });
+  }, { rootMargin: "0px 0px 100px 0px" });
   $$(".reveal").forEach((r) => revealObs.observe(r));
 
   renderPrices();
