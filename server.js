@@ -40,6 +40,16 @@ const DATA_DIR = path.join(__dirname, "data");
 
 // Email subsystem environment configuration
 const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || "trade@ambrightglobal.com";
+const INTERNAL_ALERT_EMAILS = Array.from(
+  new Set([
+    NOTIFICATION_EMAIL,
+    "skpokkalla@gmail.com",
+    ...(process.env.ADDITIONAL_ALERT_EMAILS || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+  ])
+);
 const SMTP_HOST = process.env.SMTP_HOST || "";
 const SMTP_PORT = parseInt(process.env.SMTP_PORT || "465", 10);
 const SMTP_USER = process.env.SMTP_USER || "";
@@ -654,15 +664,17 @@ const server = http.createServer(async (req, res) => {
         html: generateBuyerEmailHtml(submission),
       }).catch(console.error);
 
-      // 2. Dispatch internal alert email to Trade Desk
-      dispatchEmail({
-        to: NOTIFICATION_EMAIL,
-        subject: `🔥 [NEW RFQ ALERT] ${rfqReference} - ${company} (${qty} ${data.qtyUnit || "MT"} ${product})`,
-        reference: rfqReference,
-        type: "TRADE_DESK_ALERT",
-        text: `NEW COMMERCIAL RFQ RECEIVED:\n\nReference: ${rfqReference}\nCompany: ${company}\nContact: ${name} (${email}, ${phone})\nCountry: ${data.country || "Not specified"}\nProduct: ${product}\nGrade: ${data.grade || "Standard"}\nQuantity: ${qty} ${data.qtyUnit || "MT"}\nPOD: ${pod}\nIncoterms: ${incoterm}\nPayment: ${payment}\nSLA Target: ${submission.slaResponseTarget}\n\nOpen in Dashboard: http://localhost:3000/admin\nProforma View: http://localhost:3000/proforma?ref=${rfqReference}`,
-        html: generateTradeDeskAlertHtml(submission),
-      }).catch(console.error);
+      // 2. Dispatch internal alert email to Trade Desk & Executive Inbox (backend only)
+      for (const recipient of INTERNAL_ALERT_EMAILS) {
+        dispatchEmail({
+          to: recipient,
+          subject: `🔥 [NEW RFQ ALERT] ${rfqReference} - ${company} (${qty} ${data.qtyUnit || "MT"} ${product})`,
+          reference: rfqReference,
+          type: "TRADE_DESK_ALERT",
+          text: `NEW COMMERCIAL RFQ RECEIVED:\n\nReference: ${rfqReference}\nCompany: ${company}\nContact: ${name} (${email}, ${phone})\nCountry: ${data.country || "Not specified"}\nProduct: ${product}\nGrade: ${data.grade || "Standard"}\nQuantity: ${qty} ${data.qtyUnit || "MT"}\nPOD: ${pod}\nIncoterms: ${incoterm}\nPayment: ${payment}\nSLA Target: ${submission.slaResponseTarget}\n\nOpen in Dashboard: http://localhost:3000/admin\nProforma View: http://localhost:3000/proforma?ref=${rfqReference}`,
+          html: generateTradeDeskAlertHtml(submission),
+        }).catch(console.error);
+      }
 
       return sendJson(res, 201, {
         success: true,
@@ -732,14 +744,16 @@ const server = http.createServer(async (req, res) => {
         html: generateSupplierEmailHtml(record),
       }).catch(console.error);
 
-      dispatchEmail({
-        to: NOTIFICATION_EMAIL,
-        subject: `🏭 [NEW SUPPLIER ONBOARDING] ${regId} - ${data.company} (GSTIN: ${data.gstin})`,
-        reference: regId,
-        type: "SUPPLIER_ALERT",
-        text: `NEW FACTORY ONBOARDING SUBMITTED:\n\nID: ${regId}\nUnit: ${data.company}\nGSTIN: ${data.gstin}\nIEC: ${data.iec || "Not provided"}\nCategory: ${data.category || "General"}\nEmail: ${data.email}\n\nDashboard: http://localhost:3000/admin`,
-        html: generateSupplierEmailHtml(record),
-      }).catch(console.error);
+      for (const recipient of INTERNAL_ALERT_EMAILS) {
+        dispatchEmail({
+          to: recipient,
+          subject: `🏭 [NEW SUPPLIER ONBOARDING] ${regId} - ${data.company} (GSTIN: ${data.gstin})`,
+          reference: regId,
+          type: "SUPPLIER_ALERT",
+          text: `NEW FACTORY ONBOARDING SUBMITTED:\n\nID: ${regId}\nUnit: ${data.company}\nGSTIN: ${data.gstin}\nIEC: ${data.iec || "Not provided"}\nCategory: ${data.category || "General"}\nEmail: ${data.email}\n\nDashboard: http://localhost:3000/admin`,
+          html: generateSupplierEmailHtml(record),
+        }).catch(console.error);
+      }
 
       return sendJson(res, 201, {
         success: true,
