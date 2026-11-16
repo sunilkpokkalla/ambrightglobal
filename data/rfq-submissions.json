@@ -1,5 +1,34 @@
 [
   {
+    "rfqReference": "RFQ-2611-8858",
+    "receivedAt": "2026-11-15T09:16:15.966Z",
+    "corporate": {
+      "companyLegalEntity": "Seaborne Global Ltd",
+      "procurementOfficer": "Audit Tester",
+      "designation": "Procurement Officer",
+      "corporateEmail": "tester@example.com",
+      "phone": "+1 555 0192",
+      "countryOfIncorporation": "United States",
+      "taxOrVatId": null
+    },
+    "orderSpecs": {
+      "productCategory": "1121 Steam Basmati Rice",
+      "specificGrade": "Export Grade A",
+      "quantity": "50 MT",
+      "packaging": "Standard Export Packaging",
+      "portOfDischarge": "New York / New Jersey",
+      "orderFrequency": "Spot / One-time",
+      "notes": ""
+    },
+    "tradeFinance": {
+      "incoterm": "CIF",
+      "paymentMethod": "LC at Sight",
+      "mutualNDA": "Active",
+      "complianceScreening": "Queued (FEMA / OFAC / DGFT)"
+    },
+    "slaResponseTarget": "2026-11-15T13:16:15.966Z"
+  },
+  {
     "rfqReference": "RFQ-2611-6448",
     "receivedAt": "2026-11-12T05:43:10.145Z",
     "corporate": {
