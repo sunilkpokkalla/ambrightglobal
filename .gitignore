@@ -13,6 +13,7 @@ yarn-error.log*
 Thumbs.db
 .env
 .env.*
+!.env.example
 
 # Temporary / Scratch files
 .system_generated/
